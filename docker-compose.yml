@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  electromvc:
+    image: ${DOCKER_REGISTRY-}electromvc
+    build:
+      context: .
+      dockerfile: ElectroMVC/Dockerfile

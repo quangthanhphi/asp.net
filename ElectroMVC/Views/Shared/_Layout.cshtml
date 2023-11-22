@@ -35,7 +35,7 @@
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
-            @RenderSection("naviheader",required:false)
+            @RenderSection("naviheader", required: false)
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
@@ -167,12 +167,12 @@
                 <span class="brand-text font-weight-light">Web bán hàng</span>
             </a>
 
-           @Html.Partial("_SideBarPartial");
+            @Html.Partial("_SideBarPartial");
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-         @RenderBody()
+            @RenderBody()
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
@@ -348,7 +348,10 @@
         document.querySelector("#actions .cancel").onclick = function () {
             myDropzone.removeAllFiles(true)
         }
-      // DropzoneJS Demo Code End</script>
+          // DropzoneJS Demo Code End</script>
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/ckfinder/ckfinder.js"></script>
+    <script src="//cdn.ckeditor.com/4.23.0-lts/standard/ckeditor.js"></script>
     @RenderSection("scripts", required: false);
 </body>
 </html>

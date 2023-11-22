@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-ElectroMVC-2613ce69-bd2f-4d18-826b-1bd57884ea6f</UserSecretsId>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
@@ -12,6 +13,7 @@
   <ItemGroup>
     <None Remove="Views\Admin\" />
     <None Remove="Views\Category\" />
+    <None Remove="Image\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -31,5 +33,10 @@
   <ItemGroup>
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Category\" />
+    <Folder Include="wwwroot\uploads\" />
+    <Folder Include="Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\uploads\" />
   </ItemGroup>
 </Project>

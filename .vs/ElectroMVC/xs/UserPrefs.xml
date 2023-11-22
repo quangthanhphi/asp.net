@@ -3,34 +3,43 @@
   <MonoDevelop.Ide.ItemProperties.ElectroMVC PreferredExecutionTarget="/Applications/Brave Browser.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ElectroMVC/Views/News/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ElectroMVC/Controllers/NewsController.cs">
     <Files>
-      <File FileName="ElectroMVC/Views/Category/Index.cshtml" Line="5" Column="46" />
-      <File FileName="ElectroMVC/Views/News/Index.cshtml" Line="72" Column="29" />
-      <File FileName="ElectroMVC/Views/Shared/_SideBarPartial.cshtml" Line="54" Column="44" />
-      <File FileName="ElectroMVC/Views/News/Create.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/News/Details.cshtml" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Views/Category/Index.cshtml" />
+      <File FileName="ElectroMVC/Views/News/Index.cshtml" Line="71" Column="59" />
+      <File FileName="ElectroMVC/Views/Shared/_SideBarPartial.cshtml" Line="69" Column="32" />
+      <File FileName="ElectroMVC/Views/News/Create.cshtml" Line="34" Column="19" />
+      <File FileName="ElectroMVC/Views/News/Details.cshtml" />
       <File FileName="ElectroMVC/Views/News/Delete.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/Admin/Index.cshtml" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Views/Admin/Index.cshtml" />
+      <File FileName="ElectroMVC/Models/News.cs" Line="10" Column="14" />
+      <File FileName="ElectroMVC/Controllers/NewsController.cs" Line="16" Column="1" />
+      <File FileName="ElectroMVC/Models/Category.cs" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Views/Shared/_Layout.cshtml" Line="354" Column="16" />
+      <File FileName="ElectroMVC/Views/Category/Create.cshtml" Line="1" Column="1" />
+      <File FileName="ElectroMVC/wwwroot/ckeditor/config.js" Line="1" Column="1" />
+      <File FileName="ElectroMVC/wwwroot/ckeditor/ckeditor.js" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Program.cs" Line="45" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ElectroMVC">
-            <Node name="ElectroMVC">
+          <Node name="ElectroMVC" expanded="True">
+            <Node name="ElectroMVC" expanded="True">
+              <Node name="ConnectedServicesFolder" selected="True" />
               <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
+              <Node name="Image" expanded="True" />
+              <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Views">
-                <Node name="Admin" expanded="True" />
-                <Node name="Adv" expanded="True" />
+              <Node name="Views" expanded="True">
                 <Node name="Category" expanded="True" />
-                <Node name="News">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="News" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
-              <Node name="wwwroot" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="ckeditor" expanded="True" />
+                <Node name="uploads" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
