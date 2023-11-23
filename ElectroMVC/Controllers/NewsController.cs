@@ -225,6 +225,19 @@ namespace ElectroMVC.Controllers
             var news = await _context.News.FindAsync(id);
             if (news != null)
             {
+                // Delete old image if it exists
+                if (Path.GetFileName(news.Image) != null)
+                {
+                    var oldImagePath = Path.Combine("wwwroot", "images", Path.GetFileName(news.Image));
+                    // Delete old image if it exists
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                    //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
+
+                }
+
                 _context.News.Remove(news);
             }
 

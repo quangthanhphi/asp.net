@@ -215,6 +215,19 @@ namespace ElectroMVC.Controllers
             var productCategory = await _context.ProductCategory.FindAsync(id);
             if (productCategory != null)
             {
+                // Delete old image if it exists
+                if (Path.GetFileName(productCategory.Icon) != null)
+                {
+                    var oldImagePath = Path.Combine("wwwroot", "images", Path.GetFileName(productCategory.Icon));
+                    // Delete old image if it exists
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                    //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
+
+                }
+
                 _context.ProductCategory.Remove(productCategory);
             }
             
