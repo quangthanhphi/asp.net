@@ -330,6 +330,9 @@ namespace ElectroMVC.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Alias")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("CreatedBy")
                         .HasColumnType("longtext");
 
@@ -404,6 +407,9 @@ namespace ElectroMVC.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("Alias")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("longtext");

@@ -61,6 +61,10 @@ namespace ElectroMVC.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                product.Alias = ElectroMVC.Models.Filter.FilterChar(product.Title);
+                product.CreatedDate = DateTime.Now;
+                product.ModifiedDate = DateTime.Now;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

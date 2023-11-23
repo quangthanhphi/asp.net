@@ -56,10 +56,35 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Icon,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] ProductCategory productCategory)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,Icon,ImageFile,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] ProductCategory productCategory, IFormFile imageFile)
         {
             if (ModelState.IsValid)
             {
+                //Xử lí hình ảnh
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    // Example: Save to the wwwroot/images folder
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(imageFile.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(stream);
+                    }
+
+                    productCategory.Icon = "/images/" + uniqueFileName; // Update this based on your project structure
+                }
+
+                productCategory.Alias = ElectroMVC.Models.Filter.FilterChar(productCategory.Title);
+                productCategory.CreatedDate = DateTime.Now;
+                productCategory.ModifiedDate = DateTime.Now;
                 _context.Add(productCategory);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -88,7 +113,7 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Icon,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] ProductCategory productCategory)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Icon,ImageFile,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] ProductCategory productCategory)
         {
             if (id != productCategory.Id)
             {
@@ -99,6 +124,48 @@ namespace ElectroMVC.Controllers
             {
                 try
                 {
+                    // Check if a new image is provided
+                    if (productCategory.ImageFile != null && productCategory.ImageFile.Length > 0)
+                    {
+                        // Delete old image if it exists
+                        if (Path.GetFileName(productCategory.Icon) != null)
+                        {
+                            var oldImagePath = Path.Combine("wwwroot", "images", Path.GetFileName(productCategory.Icon));
+                            // Delete old image if it exists
+                            if (System.IO.File.Exists(oldImagePath))
+                            {
+                                System.IO.File.Delete(oldImagePath);
+                            }
+                            //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
+
+                        }
+
+
+
+
+                        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+
+                        if (!Directory.Exists(uploadsFolder))
+                        {
+                            Directory.CreateDirectory(uploadsFolder);
+                        }
+
+                        // Save the new image
+                        var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(productCategory.ImageFile.FileName);
+                        var newImagePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        using (var stream = new FileStream(newImagePath, FileMode.Create))
+                        {
+                            await productCategory.ImageFile.CopyToAsync(stream);
+                        }
+
+                        // Update the news object with the new image path
+                        productCategory.Icon = "/images/" + uniqueFileName; // Update this based on your project structure
+                    }
+                    productCategory.Alias = ElectroMVC.Models.Filter.FilterChar(productCategory.Title);
+                    productCategory.CreatedDate = DateTime.Now;
+                    productCategory.ModifiedDate = DateTime.Now;
                     _context.Update(productCategory);
                     await _context.SaveChangesAsync();
                 }

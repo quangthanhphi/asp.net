@@ -15,6 +15,9 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
 using Microsoft.CodeAnalysis.Elfie.Model.Tree;
+using ElectroMVC.Migrations;
+
+
 
 
 namespace ElectroMVC.Controllers
@@ -66,7 +69,7 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] News news, IFormFile imageFile)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] Models.News news, IFormFile imageFile)
         {
               
             if (ModelState.IsValid)
@@ -128,7 +131,7 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] Models.News news)
         {
             
             if (id != news.Id)
@@ -138,21 +141,22 @@ namespace ElectroMVC.Controllers
 
             if (ModelState.IsValid)
             {
-
-                // Delete old image if it exists
-              
-               
-
                 // Check if a new image is provided
                 if (news.ImageFile != null && news.ImageFile.Length > 0)
                 {
                     // Delete old image if it exists
-                    var oldImagePath = Path.Combine("wwwroot","images", Path.GetFileName(news.Image));
-                    //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
+                    if (Path.GetFileName(news.Image) != null)
+                    {
+                        var oldImagePath = Path.Combine("wwwroot", "images", Path.GetFileName(news.Image));
+                        // Delete old image if it exists
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                        //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
 
-                    
-                     System.IO.File.Delete(oldImagePath);
-                    
+                    }
+
 
 
                     var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
