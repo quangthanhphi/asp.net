@@ -13,6 +13,7 @@ using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 using Microsoft.Extensions.Hosting.Internal;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
 
 
 namespace ElectroMVC.Controllers
@@ -64,14 +65,14 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] News news, IFormFile file)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] News news, IFormFile imageFile)
         {
               
             if (ModelState.IsValid)
             {
                 // Process other properties...
 
-                if (news.ImageFile != null && news.ImageFile.Length > 0)
+                if (imageFile != null && imageFile.Length > 0)
                 {
                     // Example: Save to the wwwroot/images folder
                     var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
@@ -81,12 +82,12 @@ namespace ElectroMVC.Controllers
                         Directory.CreateDirectory(uploadsFolder);
                     }
 
-                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(news.ImageFile.FileName);
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(imageFile.FileName);
                     var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
-                        await news.ImageFile.CopyToAsync(stream);
+                        await imageFile.CopyToAsync(stream);
                     }
 
                     news.Image = "/images/" + uniqueFileName; // Update this based on your project structure
@@ -126,7 +127,7 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Detail,Image,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] News news, IFormFile newImage)
         {
             if (id != news.Id)
             {
@@ -135,27 +136,51 @@ namespace ElectroMVC.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+                // Delete old image if it exists
+                if (!string.IsNullOrEmpty(news.Image))
                 {
+                    var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", news.Image);
+
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
+
+                // Check if a new image is provided
+                if (newImage != null && newImage.Length > 0)
+                    {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
+
+                    // Save the new image
+                        var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(newImage.FileName);
+                        var newImagePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        using (var stream = new FileStream(newImagePath, FileMode.Create))
+                        {
+                            await newImage.CopyToAsync(stream);
+                        }
+
+                        // Update the news object with the new image path
+                        news.Image = "/images/" + uniqueFileName; // Update this based on your project structure
+                    }
+
                     _context.Update(news);
                     await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!NewsExists(news.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Index));
+                
+               
             }
+
             ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id", news.CategoryId);
             return View(news);
         }
+
 
         // GET: News/Delete/5
         public async Task<IActionResult> Delete(int? id)

@@ -30089,6 +30089,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/7e5a43ed-b9e5-45e9-8e7c-5e73ca6e3df3_logo.png",
+      "PackagePath": "staticwebassets/images/7e5a43ed-b9e5-45e9-8e7c-5e73ca6e3df3_logo.png"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },
