@@ -34,5 +34,9 @@
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Category\" />
     <Folder Include="Image\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\" />
   </ItemGroup>
 </Project>

@@ -30089,8 +30089,16 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/7e5a43ed-b9e5-45e9-8e7c-5e73ca6e3df3_logo.png",
-      "PackagePath": "staticwebassets/images/7e5a43ed-b9e5-45e9-8e7c-5e73ca6e3df3_logo.png"
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/.DS_Store",
+      "PackagePath": "staticwebassets/images/.DS_Store"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/32810bb4-b523-4334-89f0-960a16379f49_Athletes - Hero 2 - Mike.jpeg",
+      "PackagePath": "staticwebassets/images/32810bb4-b523-4334-89f0-960a16379f49_Athletes - Hero 2 - Mike.jpeg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/70d16994-2bb1-4b20-8563-84a5a4a32181_background.jpeg",
+      "PackagePath": "staticwebassets/images/70d16994-2bb1-4b20-8563-84a5a4a32181_background.jpeg"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/js/site.js",

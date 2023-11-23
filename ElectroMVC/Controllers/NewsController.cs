@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting.Internal;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
+using Microsoft.CodeAnalysis.Elfie.Model.Tree;
 
 
 namespace ElectroMVC.Controllers
@@ -127,8 +128,9 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] News news, IFormFile newImage)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Detail,Image,ImageFile,CategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] News news)
         {
+            
             if (id != news.Id)
             {
                 return NotFound();
@@ -136,21 +138,25 @@ namespace ElectroMVC.Controllers
 
             if (ModelState.IsValid)
             {
-                // Delete old image if it exists
-                if (!string.IsNullOrEmpty(news.Image))
-                {
-                    var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", news.Image);
 
-                    if (System.IO.File.Exists(oldImagePath))
-                    {
-                        System.IO.File.Delete(oldImagePath);
-                    }
-                }
+                // Delete old image if it exists
+              
+               
 
                 // Check if a new image is provided
-                if (newImage != null && newImage.Length > 0)
-                    {
+                if (news.ImageFile != null && news.ImageFile.Length > 0)
+                {
+                    // Delete old image if it exists
+                    var oldImagePath = Path.Combine("wwwroot","images", Path.GetFileName(news.Image));
+                    //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
+
+                    
+                     System.IO.File.Delete(oldImagePath);
+                    
+
+
                     var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
 
                     if (!Directory.Exists(uploadsFolder))
                     {
@@ -158,18 +164,20 @@ namespace ElectroMVC.Controllers
                     }
 
                     // Save the new image
-                        var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(newImage.FileName);
-                        var newImagePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(news.ImageFile.FileName);
+                    var newImagePath = Path.Combine(uploadsFolder, uniqueFileName);
 
-                        using (var stream = new FileStream(newImagePath, FileMode.Create))
-                        {
-                            await newImage.CopyToAsync(stream);
-                        }
-
-                        // Update the news object with the new image path
-                        news.Image = "/images/" + uniqueFileName; // Update this based on your project structure
+                    using (var stream = new FileStream(newImagePath, FileMode.Create))
+                    {
+                        await news.ImageFile.CopyToAsync(stream);
                     }
 
+                    // Update the news object with the new image path
+                    news.Image = "/images/" + uniqueFileName; // Update this based on your project structure
+                }
+
+                    news.CreatedDate = DateTime.Now;
+                    news.ModifiedDate = DateTime.Now;
                     _context.Update(news);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));

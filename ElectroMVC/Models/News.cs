@@ -19,7 +19,7 @@ namespace ElectroMVC.Models
         [Display(Name = "Ảnh đại diện")]
         [DataType(DataType.Upload)]
         [NotMapped]
-        public IFormFile ImageFile { get; set; }
+        public IFormFile? ImageFile { get; set; }
         public int CategoryId { get; set; }
         public string? SeoTitle { get; set; }
         public string? SeoDescription { get; set; }
