@@ -14,15 +14,14 @@ namespace ElectroMVC.Models
         [StringLength(250)]
         public string? Title { get; set; }
         public string? Alias { get; set; }
-
         public string? ProductCode { get; set; }
         public string? Description { get; set; }
         public string? Detail { get; set; }
         public string? Image { get; set; }
-        [Display(Name = "Ảnh đại diện")]
-        [DataType(DataType.Upload)]
-        [NotMapped]
-        public List<IFormFile>? ImageFiles { get; set; }
+        //[Display(Name = "Ảnh đại diện")]
+        //[DataType(DataType.Upload)]
+        //[NotMapped]
+        //public List<IFormFile>? ImageFiles { get; set; }
         public decimal Price { get; set; }
         public decimal PriceSale { get; set; }
         public int Quantity{ get; set; }
@@ -34,7 +33,8 @@ namespace ElectroMVC.Models
         public string? SeoTitle { get; set; }
         public string? SeoDescription { get; set; }
         public string? SeoKeywords { get; set; }
-        public virtual ProductCategory ProductCategory { get; set; }
+        public virtual ProductCategory? ProductCategory { get; set; }
+        
     }
 }
 

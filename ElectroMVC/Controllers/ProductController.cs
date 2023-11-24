@@ -61,14 +61,49 @@ namespace ElectroMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                // Kiểm tra xem có giá trị được chọn cho ProductCategoryId hay không
+                if (product.ProductCategoryId == 0)
+                {
+                    ModelState.AddModelError("ProductCategoryId", "The ProductCategory field is required.");
+                    ViewData["ProductCategoryId"] = new SelectList(_context.Set<ProductCategory>(), "Id", "Title", product.ProductCategoryId);
+                    return View(product);
+                }
                 product.Alias = ElectroMVC.Models.Filter.FilterChar(product.Title);
                 product.CreatedDate = DateTime.Now;
                 product.ModifiedDate = DateTime.Now;
+
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+                //if (product.ImageFiles.Count > 0)
+                //{
+                //    foreach (var file in product.ImageFiles)
+                //    {
+
+                //            // Save the file or perform other operations
+                //            // Example: Save to the wwwroot/images folder
+                //            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+                //            if (!Directory.Exists(uploadsFolder))
+                //            {
+                //                Directory.CreateDirectory(uploadsFolder);
+                //            }
+
+                //            var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
+                //            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                //            using (var stream = new FileStream(filePath, FileMode.Create))
+                //            {
+                //                file.CopyTo(stream);
+                //            }
+                //            // Update the news object with the new image path
+                //            product.Image = "/images/" + uniqueFileName; // Update this based on your project structure
+
+                //    }      
+                //}
+
             }
+
             ViewData["ProductCategoryId"] = new SelectList(_context.Set<ProductCategory>(), "Id", "Title", product.ProductCategoryId);
             return View(product);
         }

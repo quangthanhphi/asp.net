@@ -141,8 +141,6 @@ namespace ElectroMVC.Controllers
                         }
 
 
-
-
                         var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
 
 
