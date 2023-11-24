@@ -130,7 +130,7 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ProductCode,Description,Detail,Image,Price,PriceSale,Quantity,IsHome,IsSale,IsFeature,IsHot,ProductCategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ProductCode,Description,Detail,Image,ImageFiles,Price,PriceSale,Quantity,IsHome,IsSale,IsFeature,IsHot,ProductCategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] Product product)
         {
             if (id != product.Id)
             {
@@ -141,6 +141,50 @@ namespace ElectroMVC.Controllers
             {
                 try
                 {
+                    // Check if a new image is provided
+                    if (product.ImageFiles.Count > 0)
+                    {
+                        foreach(var file in product.ImageFiles)
+                        {
+                            // Delete old image if it exists
+                            if (Path.GetFileName(file.FileName) != null)
+                            {
+                                var oldImagePath = Path.Combine("wwwroot", "images", Path.GetFileName(file.FileName));
+                                // Delete old image if it exists
+                                if (System.IO.File.Exists(oldImagePath))
+                                {
+                                    System.IO.File.Delete(oldImagePath);
+                                }
+                                //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
+
+                            }
+
+
+
+                            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+
+                            if (!Directory.Exists(uploadsFolder))
+                            {
+                                Directory.CreateDirectory(uploadsFolder);
+                            }
+
+                            // Save the new image
+                            var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
+                            var newImagePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                            using (var stream = new FileStream(newImagePath, FileMode.Create))
+                            {
+                                await file.CopyToAsync(stream);
+                            }
+
+                            // Update the news object with the new image path
+                            product.Image = "/images/" + uniqueFileName; // Update this based on your project structure
+                        }
+                    }
+                    product.Alias = ElectroMVC.Models.Filter.FilterChar(product.Title);
+                    product.CreatedDate = DateTime.Now;
+                    product.ModifiedDate = DateTime.Now;
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }
