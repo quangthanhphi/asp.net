@@ -57,7 +57,7 @@ namespace ElectroMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ProductCode,Description,Detail,Image,Price,PriceSale,Quantity,IsHome,IsSale,IsFeature,IsHot,ProductCategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,Title,ProductCode,Description,Detail,Image,ImageFiles,Price,PriceSale,Quantity,IsHome,IsSale,IsFeature,IsHot,ProductCategoryId,SeoTitle,SeoDescription,SeoKeywords,CreatedBy,CreatedDate,ModifiedDate,ModifiedBy")] Product product, List<IFormFile> imageFiles)
         {
             if (ModelState.IsValid)
             {
@@ -68,6 +68,33 @@ namespace ElectroMVC.Controllers
                     ViewData["ProductCategoryId"] = new SelectList(_context.Set<ProductCategory>(), "Id", "Title", product.ProductCategoryId);
                     return View(product);
                 }
+
+                if (imageFiles.Count > 0)
+                {
+                    foreach (var file in imageFiles)
+                    {
+
+                        // Save the file or perform other operations
+                        // Example: Save to the wwwroot/images folder
+                        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+                        if (!Directory.Exists(uploadsFolder))
+                        {
+                            Directory.CreateDirectory(uploadsFolder);
+                        }
+
+                        var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
+                        var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            file.CopyTo(stream);
+                        }
+                        // Update the news object with the new image path
+                        product.Image = "/images/" + uniqueFileName; // Update this based on your project structure
+
+                    }
+                }
                 product.Alias = ElectroMVC.Models.Filter.FilterChar(product.Title);
                 product.CreatedDate = DateTime.Now;
                 product.ModifiedDate = DateTime.Now;
@@ -75,33 +102,6 @@ namespace ElectroMVC.Controllers
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-                //if (product.ImageFiles.Count > 0)
-                //{
-                //    foreach (var file in product.ImageFiles)
-                //    {
-
-                //            // Save the file or perform other operations
-                //            // Example: Save to the wwwroot/images folder
-                //            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-
-                //            if (!Directory.Exists(uploadsFolder))
-                //            {
-                //                Directory.CreateDirectory(uploadsFolder);
-                //            }
-
-                //            var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
-                //            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                //            using (var stream = new FileStream(filePath, FileMode.Create))
-                //            {
-                //                file.CopyTo(stream);
-                //            }
-                //            // Update the news object with the new image path
-                //            product.Image = "/images/" + uniqueFileName; // Update this based on your project structure
-
-                //    }      
-                //}
-
             }
 
             ViewData["ProductCategoryId"] = new SelectList(_context.Set<ProductCategory>(), "Id", "Title", product.ProductCategoryId);

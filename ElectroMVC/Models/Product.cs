@@ -18,10 +18,10 @@ namespace ElectroMVC.Models
         public string? Description { get; set; }
         public string? Detail { get; set; }
         public string? Image { get; set; }
-        //[Display(Name = "Ảnh đại diện")]
-        //[DataType(DataType.Upload)]
-        //[NotMapped]
-        //public List<IFormFile>? ImageFiles { get; set; }
+        [Display(Name = "Ảnh đại diện")]
+        [DataType(DataType.Upload)]
+        [NotMapped]
+        public List<IFormFile>? ImageFiles { get; set; }
         public decimal Price { get; set; }
         public decimal PriceSale { get; set; }
         public int Quantity{ get; set; }
