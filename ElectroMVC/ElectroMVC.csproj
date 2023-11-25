@@ -13,7 +13,6 @@
   <ItemGroup>
     <None Remove="Views\Admin\" />
     <None Remove="Views\Category\" />
-    <None Remove="Image\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -33,7 +32,6 @@
   <ItemGroup>
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Category\" />
-    <Folder Include="Image\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
   <ItemGroup>

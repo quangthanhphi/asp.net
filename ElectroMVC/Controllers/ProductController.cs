@@ -71,11 +71,10 @@ namespace ElectroMVC.Controllers
 
                 if (imageFiles.Count > 0)
                 {
+                    var imagePaths = new List<string>();
+
                     foreach (var file in imageFiles)
                     {
-
-                        // Save the file or perform other operations
-                        // Example: Save to the wwwroot/images folder
                         var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
 
                         if (!Directory.Exists(uploadsFolder))
@@ -90,11 +89,14 @@ namespace ElectroMVC.Controllers
                         {
                             file.CopyTo(stream);
                         }
-                        // Update the news object with the new image path
-                        product.Image = "/images/" + uniqueFileName; // Update this based on your project structure
 
+                        imagePaths.Add("/images/" + uniqueFileName);
                     }
+
+                    // Nối đường dẫn của ảnh và ngăn chúng bởi dấu chấm phẩy
+                    product.Image = string.Join(";", imagePaths);
                 }
+
                 product.Alias = ElectroMVC.Models.Filter.FilterChar(product.Title);
                 product.CreatedDate = DateTime.Now;
                 product.ModifiedDate = DateTime.Now;
@@ -107,6 +109,7 @@ namespace ElectroMVC.Controllers
             ViewData["ProductCategoryId"] = new SelectList(_context.Set<ProductCategory>(), "Id", "Title", product.ProductCategoryId);
             return View(product);
         }
+
 
         // GET: Product/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -142,14 +145,16 @@ namespace ElectroMVC.Controllers
                 try
                 {
                     // Check if a new image is provided
-                    if (product.ImageFiles.Count > 0)
+                    if (product.ImageFiles != null && product.ImageFiles.Count > 0)
                     {
-                        foreach(var file in product.ImageFiles)
+                        var imagePaths = new List<string>();
+                        // Delete old image if it exists
+                        if (Path.GetFileName(product.Image) != null)
                         {
-                            // Delete old image if it exists
-                            if (Path.GetFileName(file.FileName) != null)
+                            string[] arr = product.Image.Split(';');
+                            foreach (var img in arr)
                             {
-                                var oldImagePath = Path.Combine("wwwroot", "images", Path.GetFileName(file.FileName));
+                                var oldImagePath = Path.Combine("wwwroot", "images", Path.GetFileName(img));
                                 // Delete old image if it exists
                                 if (System.IO.File.Exists(oldImagePath))
                                 {
@@ -158,30 +163,34 @@ namespace ElectroMVC.Controllers
                                 //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
 
                             }
-
-
-
-                            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-
-
-                            if (!Directory.Exists(uploadsFolder))
-                            {
-                                Directory.CreateDirectory(uploadsFolder);
-                            }
-
-                            // Save the new image
-                            var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
-                            var newImagePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                            using (var stream = new FileStream(newImagePath, FileMode.Create))
-                            {
-                                await file.CopyToAsync(stream);
-                            }
-
-                            // Update the news object with the new image path
-                            product.Image = "/images/" + uniqueFileName; // Update this based on your project structure
                         }
-                    }
+                            foreach (var file in product.ImageFiles)
+                        {
+                            
+
+                            
+                       
+                                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+
+                                if (!Directory.Exists(uploadsFolder))
+                                {
+                                    Directory.CreateDirectory(uploadsFolder);
+                                }
+
+                                var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
+                                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                                using (var stream = new FileStream(filePath, FileMode.Create))
+                                {
+                                    file.CopyTo(stream);
+                                }
+
+                                imagePaths.Add("/images/" + uniqueFileName);
+                            }
+
+                            // Nối đường dẫn của ảnh và ngăn chúng bởi dấu chấm phẩy
+                            product.Image = string.Join(";", imagePaths);
+                        }
                     product.Alias = ElectroMVC.Models.Filter.FilterChar(product.Title);
                     product.CreatedDate = DateTime.Now;
                     product.ModifiedDate = DateTime.Now;
@@ -236,6 +245,21 @@ namespace ElectroMVC.Controllers
             var product = await _context.Product.FindAsync(id);
             if (product != null)
             {
+                // Delete old image if it exists
+                if (Path.GetFileName(product.Image) != null)
+                {
+                    string[] arr = product.Image.Split(';');
+                    foreach (var img in arr)
+                    {
+                        var oldImagePath = Path.Combine("wwwroot", "images", Path.GetFileName(img));
+                        // Delete old image if it exists
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                        //Console.WriteLine("Old Image Path: " + oldImagePath); // Add this line for debugging
+                    }
+                }
                 _context.Product.Remove(product);
             }
             
