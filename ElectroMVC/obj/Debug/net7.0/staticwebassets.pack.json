@@ -7897,6 +7897,394 @@
       "PackagePath": "staticwebassets/admin/plugins/uplot/uPlot.min.css"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/.DS_Store",
+      "PackagePath": "staticwebassets/assets/.DS_Store"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/banner_1.jpg",
+      "PackagePath": "staticwebassets/assets/images/banner_1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/banner_2.jpg",
+      "PackagePath": "staticwebassets/assets/images/banner_2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/banner_3.jpg",
+      "PackagePath": "staticwebassets/assets/images/banner_3.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/blog_1.jpg",
+      "PackagePath": "staticwebassets/assets/images/blog_1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/blog_2.jpg",
+      "PackagePath": "staticwebassets/assets/images/blog_2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/blog_3.jpg",
+      "PackagePath": "staticwebassets/assets/images/blog_3.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/deal_ofthe_week.png",
+      "PackagePath": "staticwebassets/assets/images/deal_ofthe_week.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/desc_1.jpg",
+      "PackagePath": "staticwebassets/assets/images/desc_1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/desc_2.jpg",
+      "PackagePath": "staticwebassets/assets/images/desc_2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/desc_3.jpg",
+      "PackagePath": "staticwebassets/assets/images/desc_3.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/map_marker.png",
+      "PackagePath": "staticwebassets/assets/images/map_marker.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_1.png",
+      "PackagePath": "staticwebassets/assets/images/product_1.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_10.png",
+      "PackagePath": "staticwebassets/assets/images/product_10.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_2.png",
+      "PackagePath": "staticwebassets/assets/images/product_2.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_3.png",
+      "PackagePath": "staticwebassets/assets/images/product_3.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_4.png",
+      "PackagePath": "staticwebassets/assets/images/product_4.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_5.png",
+      "PackagePath": "staticwebassets/assets/images/product_5.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_6.png",
+      "PackagePath": "staticwebassets/assets/images/product_6.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_7.png",
+      "PackagePath": "staticwebassets/assets/images/product_7.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_8.png",
+      "PackagePath": "staticwebassets/assets/images/product_8.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/product_9.png",
+      "PackagePath": "staticwebassets/assets/images/product_9.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/single_1.jpg",
+      "PackagePath": "staticwebassets/assets/images/single_1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/single_1_thumb.jpg",
+      "PackagePath": "staticwebassets/assets/images/single_1_thumb.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/single_2.jpg",
+      "PackagePath": "staticwebassets/assets/images/single_2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/single_2_thumb.jpg",
+      "PackagePath": "staticwebassets/assets/images/single_2_thumb.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/single_3.jpg",
+      "PackagePath": "staticwebassets/assets/images/single_3.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/single_3_thumb.jpg",
+      "PackagePath": "staticwebassets/assets/images/single_3_thumb.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/slider_1.jpg",
+      "PackagePath": "staticwebassets/assets/images/slider_1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/js/categories_custom.js",
+      "PackagePath": "staticwebassets/assets/js/categories_custom.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/js/contact_custom.js",
+      "PackagePath": "staticwebassets/assets/js/contact_custom.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/js/custom.js",
+      "PackagePath": "staticwebassets/assets/js/custom.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/js/jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets/assets/js/jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/js/single_custom.js",
+      "PackagePath": "staticwebassets/assets/js/single_custom.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/Isotope/isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets/assets/plugins/Isotope/isotope.pkgd.min.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/OwlCarousel2-2.2.1/ajax-loader.gif",
+      "PackagePath": "staticwebassets/assets/plugins/OwlCarousel2-2.2.1/ajax-loader.gif"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/OwlCarousel2-2.2.1/animate.css",
+      "PackagePath": "staticwebassets/assets/plugins/OwlCarousel2-2.2.1/animate.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css",
+      "PackagePath": "staticwebassets/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js",
+      "PackagePath": "staticwebassets/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css",
+      "PackagePath": "staticwebassets/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/OwlCarousel2-2.2.1/owl.video.play.png",
+      "PackagePath": "staticwebassets/assets/plugins/OwlCarousel2-2.2.1/owl.video.play.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/easing/easing.js",
+      "PackagePath": "staticwebassets/assets/plugins/easing/easing.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/HELP-US-OUT.txt",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/HELP-US-OUT.txt"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/css/font-awesome.css",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/css/font-awesome.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/fonts/FontAwesome.otf",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/fonts/FontAwesome.otf"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.eot"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.svg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/animated.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/animated.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/bordered-pulled.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/bordered-pulled.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/core.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/core.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/fixed-width.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/fixed-width.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/font-awesome.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/font-awesome.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/icons.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/icons.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/larger.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/larger.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/list.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/list.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/mixins.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/mixins.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/path.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/path.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/rotated-flipped.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/rotated-flipped.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/screen-reader.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/screen-reader.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/stacked.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/stacked.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/less/variables.less",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/less/variables.less"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_animated.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_animated.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_bordered-pulled.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_bordered-pulled.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_core.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_core.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_fixed-width.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_fixed-width.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_icons.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_icons.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_larger.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_larger.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_list.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_list.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_mixins.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_mixins.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_path.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_path.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_rotated-flipped.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_rotated-flipped.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_screen-reader.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_screen-reader.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_stacked.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_stacked.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/_variables.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/_variables.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/font-awesome-4.7.0/scss/font-awesome.scss",
+      "PackagePath": "staticwebassets/assets/plugins/font-awesome-4.7.0/scss/font-awesome.scss"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css",
+      "PackagePath": "staticwebassets/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js",
+      "PackagePath": "staticwebassets/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/themify-icons/fonts/themify.eot",
+      "PackagePath": "staticwebassets/assets/plugins/themify-icons/fonts/themify.eot"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/themify-icons/fonts/themify.svg",
+      "PackagePath": "staticwebassets/assets/plugins/themify-icons/fonts/themify.svg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/themify-icons/fonts/themify.ttf",
+      "PackagePath": "staticwebassets/assets/plugins/themify-icons/fonts/themify.ttf"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/themify-icons/fonts/themify.woff",
+      "PackagePath": "staticwebassets/assets/plugins/themify-icons/fonts/themify.woff"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/themify-icons/themify-icons.css",
+      "PackagePath": "staticwebassets/assets/plugins/themify-icons/themify-icons.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/bootstrap4/bootstrap.min.css",
+      "PackagePath": "staticwebassets/assets/styles/bootstrap4/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/bootstrap4/bootstrap.min.js",
+      "PackagePath": "staticwebassets/assets/styles/bootstrap4/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/bootstrap4/popper.js",
+      "PackagePath": "staticwebassets/assets/styles/bootstrap4/popper.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/categories_responsive.css",
+      "PackagePath": "staticwebassets/assets/styles/categories_responsive.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/categories_styles.css",
+      "PackagePath": "staticwebassets/assets/styles/categories_styles.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/contact_responsive.css",
+      "PackagePath": "staticwebassets/assets/styles/contact_responsive.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/contact_styles.css",
+      "PackagePath": "staticwebassets/assets/styles/contact_styles.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/main_styles.css",
+      "PackagePath": "staticwebassets/assets/styles/main_styles.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/responsive.css",
+      "PackagePath": "staticwebassets/assets/styles/responsive.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/single_responsive.css",
+      "PackagePath": "staticwebassets/assets/styles/single_responsive.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/styles/single_styles.css",
+      "PackagePath": "staticwebassets/assets/styles/single_styles.css"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/ckeditor/CHANGES.md",
       "PackagePath": "staticwebassets/ckeditor/CHANGES.md"
     },
@@ -30097,20 +30485,20 @@
       "PackagePath": "staticwebassets/images/07648a52-ab5b-4f9e-8bac-cfa2ead0c759_Photo-Competition-Blog.jpg"
     },
     {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/2d7b2381-c439-44f5-9ee2-3b65c1d78411_273915492_160556689654966_70967876538822741_n.jpeg",
-      "PackagePath": "staticwebassets/images/2d7b2381-c439-44f5-9ee2-3b65c1d78411_273915492_160556689654966_70967876538822741_n.jpeg"
-    },
-    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/385e21b9-7971-4cf3-b974-f6802d3b9579_background.jpeg",
       "PackagePath": "staticwebassets/images/385e21b9-7971-4cf3-b974-f6802d3b9579_background.jpeg"
     },
     {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/39492fd7-c020-406f-8b63-50c5022deca3_339026034_908675277071228_6300195434930646980_n.jpg",
-      "PackagePath": "staticwebassets/images/39492fd7-c020-406f-8b63-50c5022deca3_339026034_908675277071228_6300195434930646980_n.jpg"
-    },
-    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/519c190d-1b9c-4663-8574-33caef3b95a2_Photo-Competition-Blog.jpg",
       "PackagePath": "staticwebassets/images/519c190d-1b9c-4663-8574-33caef3b95a2_Photo-Competition-Blog.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/879caedd-6053-4b48-a886-6202015604e9_273915492_160556689654966_70967876538822741_n.jpeg",
+      "PackagePath": "staticwebassets/images/879caedd-6053-4b48-a886-6202015604e9_273915492_160556689654966_70967876538822741_n.jpeg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/bc722cab-ba80-4a55-adc8-f15676579c77_339026034_908675277071228_6300195434930646980_n.jpg",
+      "PackagePath": "staticwebassets/images/bc722cab-ba80-4a55-adc8-f15676579c77_339026034_908675277071228_6300195434930646980_n.jpg"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/f9af3239-722a-43e2-a830-0e03a4ff7c4b_Photo-Competition-Blog.jpg",

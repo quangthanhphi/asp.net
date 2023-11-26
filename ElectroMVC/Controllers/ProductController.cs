@@ -166,10 +166,7 @@ namespace ElectroMVC.Controllers
                         }
                             foreach (var file in product.ImageFiles)
                         {
-                            
-
-                            
-                       
+       
                                 var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
 
                                 if (!Directory.Exists(uploadsFolder))

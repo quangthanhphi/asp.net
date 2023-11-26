@@ -292,3 +292,4 @@
 /Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/obj/Debug/net7.0/ElectroMVC.pdb
 /Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/obj/Debug/net7.0/ElectroMVC.genruntimeconfig.cache
 /Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/obj/Debug/net7.0/ref/ElectroMVC.dll
+/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/obj/Debug/net7.0/scopedcss/Views/Shared/_AdminLayout.cshtml.rz.scp.css

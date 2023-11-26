@@ -92,6 +92,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Menu/MenuTop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVudS9NZW51VG9wLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/News/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTmV3cy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -212,6 +216,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdENhdGVnb3J5L0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/Components/Menu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTWVudS9EZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -295,6 +303,10 @@ build_metadata.AdditionalFiles.CssScope =
 [/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-xcuhayr5n7
 
 [/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s

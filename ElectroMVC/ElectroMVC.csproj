@@ -13,6 +13,10 @@
   <ItemGroup>
     <None Remove="Views\Admin\" />
     <None Remove="Views\Category\" />
+    <None Remove="Views\Menu\" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="ViewComponents\" />
+    <None Remove="Views\Shared\Components\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -33,6 +37,10 @@
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Category\" />
     <Folder Include="wwwroot\images\" />
+    <Folder Include="Views\Menu\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Views\Shared\Components\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />
