@@ -1,0 +1,9 @@
+﻿<!-- Default.cshtml -->
+@model List<ProductViewModel>
+
+@foreach (var productViewModel in Model)
+{
+    <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".@productViewModel.Product.ProductCategoryId">
+        @productViewModel.ProductCategoryName
+    </li>
+}

@@ -8,7 +8,7 @@ using ElectroMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-public class MenuViewComponent : ViewComponent
+public class MenuViewComponent: ViewComponent
 {
     private readonly ApplicationDbContext _context;
 

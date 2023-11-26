@@ -92,10 +92,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Menu/MenuTop.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWVudS9NZW51VG9wLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/News/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTmV3cy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -218,6 +214,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/Components/Menu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTWVudS9EZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/Components/MenuArrival/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTWVudUFycml2YWwvRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/Components/MenuArrivalPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTWVudUFycml2YWxQYXJ0aWFsL0RlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/Components/MenuBestSeller/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTWVudUJlc3RTZWxsZXIvRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/Components/MenuProductCategory/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvTWVudVByb2R1Y3RDYXRlZ29yeS9EZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Views/Shared/Error.cshtml]

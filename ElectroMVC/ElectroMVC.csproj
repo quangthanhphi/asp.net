@@ -13,10 +13,13 @@
   <ItemGroup>
     <None Remove="Views\Admin\" />
     <None Remove="Views\Category\" />
-    <None Remove="Views\Menu\" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="ViewComponents\" />
     <None Remove="Views\Shared\Components\Menu\" />
+    <None Remove="Views\Shared\Components\MenuProductCategory\" />
+    <None Remove="Views\Shared\Components\MenuArrival\" />
+    <None Remove="Views\Shared\Components\MenuArrivalPartial\" />
+    <None Remove="Views\Shared\Components\MenuBestSeller\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -37,10 +40,13 @@
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Category\" />
     <Folder Include="wwwroot\images\" />
-    <Folder Include="Views\Menu\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="ViewComponents\" />
     <Folder Include="Views\Shared\Components\Menu\" />
+    <Folder Include="Views\Shared\Components\MenuProductCategory\" />
+    <Folder Include="Views\Shared\Components\MenuArrival\" />
+    <Folder Include="Views\Shared\Components\MenuArrivalPartial\" />
+    <Folder Include="Views\Shared\Components\MenuBestSeller\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />
