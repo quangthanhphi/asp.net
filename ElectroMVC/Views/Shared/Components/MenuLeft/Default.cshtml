@@ -1,0 +1,9 @@
+﻿<!-- Default.cshtml -->
+
+@model List<ProductCategory>
+
+
+@foreach (var item in Model)
+{
+    <li><a href="/danh-muc-san-pham/@item.Id">@item.Title</a></li>
+}

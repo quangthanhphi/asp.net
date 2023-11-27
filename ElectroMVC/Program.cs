@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ElectroMVC.Data;
+using Microsoft.AspNetCore.Mvc;
+using ElectroMVC.ViewComponents;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +38,16 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "san-pham",
+    pattern: "san-pham",
+    defaults: new { controller = "Home", action = "Privacy" });
+
+app.MapControllerRoute(
+    name: "danh-muc-san-pham",
+    pattern: "danh-muc-san-pham/{id}",
+    defaults: new { controller = "Home", action = "PCategory" });
 
 app.MapControllerRoute(
     name: "default",

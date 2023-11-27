@@ -20,6 +20,9 @@
     <None Remove="Views\Shared\Components\MenuArrival\" />
     <None Remove="Views\Shared\Components\MenuArrivalPartial\" />
     <None Remove="Views\Shared\Components\MenuBestSeller\" />
+    <None Remove="Views\Shared\Components\Products\" />
+    <None Remove="Views\Shared\Components\MenuLeft\" />
+    <None Remove="Views\Shared\Components\ProductCate\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -47,6 +50,9 @@
     <Folder Include="Views\Shared\Components\MenuArrival\" />
     <Folder Include="Views\Shared\Components\MenuArrivalPartial\" />
     <Folder Include="Views\Shared\Components\MenuBestSeller\" />
+    <Folder Include="Views\Shared\Components\Products\" />
+    <Folder Include="Views\Shared\Components\MenuLeft\" />
+    <Folder Include="Views\Shared\Components\ProductCate\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />

@@ -1,17 +1,7 @@
 ﻿@*//Default.cshtml*@
 
-@{
-    ViewData["Title"] = "Sản phẩm";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<link rel="stylesheet" type="text/css" href="~/assets/styles/bootstrap4/bootstrap.min.css">
-<link href="~/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="~/assets/styles/categories_styles.css">
-<link rel="stylesheet" type="text/css" href="~/assets/styles/categories_responsive.css">
+@model List<ProductViewModel>
+
 <div class="container product_section_container">
     <div class="row">
         <div class="col product_section clearfix">
@@ -21,7 +11,7 @@
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>All</a></li>
+                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>@ViewBag.ProductCategoryName</a></li>
                 </ul>
             </div>
 
@@ -49,7 +39,6 @@
                     <div id="slider-range"></div>
                     <div class="filter_button"><span>filter</span></div>
                 </div>-->
-
                 <!-- Sizes -->
                 <!--<div class="sidebar_section">
                     <div class="sidebar_title">
@@ -63,7 +52,6 @@
                         <li><i class="fa fa-square-o" aria-hidden="true"></i><span>XXL</span></li>
                     </ul>
                 </div>-->
-
                 <!-- Color -->
                 <!--<div class="sidebar_section">
                     <div class="sidebar_title">
@@ -143,8 +131,24 @@
                             <div class="product-grid">
 
                                 <!-- Product 1 -->
-                                @await Component.InvokeAsync("Products")
-
+                                @foreach (var item in Model)
+                                {
+                                    string[] imageUrls = item.Product.Image?.Split(';');
+                                    <div class="product-item @item.Product.ProductCategoryId">
+                                        <div class="product discount product_filter">
+                                            <div class="product_image">
+                                                <img src="@imageUrls[0]" alt="">
+                                            </div>
+                                            <div class="favorite favorite_left"></div>
+                                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$@(item.Product.Price - item.Product.PriceSale)</span></div>
+                                            <div class="product_info">
+                                                <h6 class="product_name"><a href="single.html">@item.Product.Title</a></h6>
+                                                <div class="product_price">$@item.Product.PriceSale<span>$@item.Product.PriceSale</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                                    </div>
+                                }
                             </div>
 
                             <!-- Product Sorting -->
@@ -252,12 +256,3 @@
         </div>
     </div>
 </div>
-
-<script src="~/assets/js/jquery-3.2.1.min.js"></script>
-<script src="~/assets/styles/bootstrap4/popper.js"></script>
-<script src="~/assets/styles/bootstrap4/bootstrap.min.js"></script>
-<script src="~/assets/plugins/Isotope/isotope.pkgd.min.js"></script>
-<script src="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="~/assets/plugins/easing/easing.js"></script>
-<script src="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<script src="~/assets/js/categories_custom.js"></script>

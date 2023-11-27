@@ -1,0 +1,41 @@
+﻿@*//Default.cshtml*@
+@{
+    ViewData["Title"] = "Sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="~/assets/styles/bootstrap4/bootstrap.min.css">
+<link href="~/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="~/assets/styles/categories_styles.css">
+<link rel="stylesheet" type="text/css" href="~/assets/styles/categories_responsive.css">
+
+@{
+    // Get the id from the URL
+    var productCategoryIdString = Context.Request.RouteValues["id"] as string;
+
+    // Try to parse the string to an integer
+    if (int.TryParse(productCategoryIdString, out var productCategoryId))
+    {
+        // Now, productCategoryId is an integer, and you can use it as needed
+        @await Component.InvokeAsync("ProductCate", new { productCategoryId })
+    }
+    else
+    {
+        // Handle the case where parsing failed (e.g., show an error message)
+        <p>Error: Invalid product category ID</p>
+    }
+}
+
+
+
+<script src="~/assets/js/jquery-3.2.1.min.js"></script>
+<script src="~/assets/styles/bootstrap4/popper.js"></script>
+<script src="~/assets/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="~/assets/plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="~/assets/plugins/easing/easing.js"></script>
+<script src="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script src="~/assets/js/categories_custom.js"></script>

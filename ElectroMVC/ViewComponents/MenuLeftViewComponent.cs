@@ -6,11 +6,11 @@ using ElectroMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-public class MenuProductCategoryViewComponent : ViewComponent
+public class MenuLeftViewComponent: ViewComponent
 {
     private readonly ApplicationDbContext _context;
 
-    public MenuProductCategoryViewComponent(ApplicationDbContext context)
+    public MenuLeftViewComponent(ApplicationDbContext context)
     {
         _context = context;
     }
@@ -20,5 +20,5 @@ public class MenuProductCategoryViewComponent : ViewComponent
         var items = await _context.ProductCategory.ToListAsync();
         return View(items);
     }
-    
+
 }
