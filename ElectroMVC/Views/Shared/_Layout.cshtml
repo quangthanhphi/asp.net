@@ -89,7 +89,10 @@
                                 <a href="~/assets/#">colo<span>shop</span></a>
                             </div>
                             <nav class="navbar">
-                                @await Component.InvokeAsync("Menu")
+                                <ul class="navbar_menu">
+                                    <li><a href="/">Trang chủ</a></li>
+                                    @await Component.InvokeAsync("Menu")
+                                </ul>
                                 <ul class="navbar_user">
                                     <li><a href="~/assets/#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                                     <li><a href="~/assets/#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
@@ -160,7 +163,7 @@
             </div>
         </div>
         @RenderBody();
-        
+
         <!-- Footer -->
 
         <footer class="footer">
@@ -206,6 +209,7 @@
     <script src="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script src="~/assets/plugins/easing/easing.js"></script>
     <script src="~/assets/js/custom.js"></script>
+    <script src="~/js/jsShopping.js"></script>   
 </body>
 
 </html>

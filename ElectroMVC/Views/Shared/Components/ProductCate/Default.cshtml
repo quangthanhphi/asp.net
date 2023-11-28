@@ -29,16 +29,18 @@
                 </div>
 
                 <!-- Price Range Filtering -->
-                <!--<div class="sidebar_section">
+                <div class="sidebar_section">
                     <div class="sidebar_title">
                         <h5>Filter by Price</h5>
                     </div>
                     <p>
                         <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                        <input type="hidden" id="FromAmount" />
+                        <input type="hidden" id="ToAmount" />
                     </p>
                     <div id="slider-range"></div>
                     <div class="filter_button"><span>filter</span></div>
-                </div>-->
+                </div>
                 <!-- Sizes -->
                 <!--<div class="sidebar_section">
                     <div class="sidebar_title">
@@ -142,11 +144,11 @@
                                             <div class="favorite favorite_left"></div>
                                             <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$@(item.Product.Price - item.Product.PriceSale)</span></div>
                                             <div class="product_info">
-                                                <h6 class="product_name"><a href="single.html">@item.Product.Title</a></h6>
+                                                <h6 class="product_name"><a href="/chi-tiet/@item.Product.Id">@item.Product.Title</a></h6>
                                                 <div class="product_price">$@item.Product.PriceSale<span>$@item.Product.PriceSale</span></div>
                                             </div>
                                         </div>
-                                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+                                        <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Product.Id">add to cart</a></div>
                                     </div>
                                 }
                             </div>

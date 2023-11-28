@@ -19,8 +19,9 @@ namespace ElectroMVC.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var items = await _context.Product.ToListAsync();
-            return View(items);  // Assuming you have a view named Default.cshtml
+            return View(items);  
         }
         
+         
     }
 }

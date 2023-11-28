@@ -42,7 +42,12 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "san-pham",
     pattern: "san-pham",
-    defaults: new { controller = "Home", action = "Privacy" });
+    defaults: new { controller = "Home", action = "AllProducts" });
+
+app.MapControllerRoute(
+    name: "detailProduct",
+    pattern: "chi-tiet/{id}",
+    defaults: new { controller = "Product", action = "Details" });
 
 app.MapControllerRoute(
     name: "danh-muc-san-pham",

@@ -30485,8 +30485,8 @@
       "PackagePath": "staticwebassets/images/07648a52-ab5b-4f9e-8bac-cfa2ead0c759_Photo-Competition-Blog.jpg"
     },
     {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/08afa241-df67-43ed-958f-1f2255f4e535_product_1.png",
-      "PackagePath": "staticwebassets/images/08afa241-df67-43ed-958f-1f2255f4e535_product_1.png"
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/16075563-a93d-40d8-9e1e-138fb4e11793_single_2_thumb.jpg",
+      "PackagePath": "staticwebassets/images/16075563-a93d-40d8-9e1e-138fb4e11793_single_2_thumb.jpg"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/37cd04fb-2b92-4c49-97c4-c4b59a4e4fb2_product_2.png",
@@ -30497,6 +30497,14 @@
       "PackagePath": "staticwebassets/images/37de8d2e-fda0-4107-a0bd-187b6492c976_banner_2.jpg"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/4512866b-9973-4402-b8c3-8f993cfeba83_single_2.jpg",
+      "PackagePath": "staticwebassets/images/4512866b-9973-4402-b8c3-8f993cfeba83_single_2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/4fe96081-a68e-4a2b-ad94-0ba74a21c44d_product_1.png",
+      "PackagePath": "staticwebassets/images/4fe96081-a68e-4a2b-ad94-0ba74a21c44d_product_1.png"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/68914457-3498-482b-a6a4-7995ed0df64e_banner_1.jpg",
       "PackagePath": "staticwebassets/images/68914457-3498-482b-a6a4-7995ed0df64e_banner_1.jpg"
     },
@@ -30505,8 +30513,16 @@
       "PackagePath": "staticwebassets/images/84ceceb8-43d6-4c09-a6b6-e3fe28a08f82_banner_3.jpg"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/9e834eac-d048-47ed-9723-de233d2eb4d1_single_1.jpg",
+      "PackagePath": "staticwebassets/images/9e834eac-d048-47ed-9723-de233d2eb4d1_single_1.jpg"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/c13f55af-e990-470d-b1a3-1687b91f6de4_product_4.png",
       "PackagePath": "staticwebassets/images/c13f55af-e990-470d-b1a3-1687b91f6de4_product_4.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/js/jsShopping.js",
+      "PackagePath": "staticwebassets/js/jsShopping.js"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/js/site.js",

@@ -34,16 +34,39 @@ namespace ElectroMVC.Controllers
                 return NotFound();
             }
 
+            var productViewModel = new List<ProductViewModel>();
+
+            // Lấy thông tin sản phẩm với ProductCategory thông qua mối quan hệ Include
             var product = await _context.Product
                 .Include(p => p.ProductCategory)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (product == null)
             {
                 return NotFound();
             }
 
+            // Lấy thông tin ProductCategoryName
+            var productCategory = await _context.ProductCategory
+                .Where(pc => pc.Id == product.ProductCategoryId)
+                .FirstOrDefaultAsync();
+
+            if (productCategory != null)
+            {
+                productViewModel.Add(new ProductViewModel
+                {
+                    Product = product,
+                    ProductCategoryName = productCategory.Title
+                });
+            }
+
+            // Set ProductCategoryName in ViewBag
+            ViewBag.ProductCategoryName = productCategory?.Title;
+
             return View(product);
         }
+
+
 
         // GET: Product/Create
         public IActionResult Create()
