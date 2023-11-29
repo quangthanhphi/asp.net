@@ -2,21 +2,29 @@
 using Microsoft.EntityFrameworkCore;
 using ElectroMVC.Data;
 using Microsoft.AspNetCore.Mvc;
-using ElectroMVC.ViewComponents;
+using Microsoft.Extensions.DependencyInjection; // Add this line for IServiceCollection
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-//builder.Services.AddDbContext<ApplicationDbContext>(options =>
-//    options.UseSqlite(connectionString));
 builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
-    options.UseMySql(connectionString,ServerVersion.AutoDetect(connectionString)));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+// Inside ConfigureServices method
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -31,6 +39,9 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+// Inside Configure method
+app.UseSession();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -60,4 +71,3 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
-
