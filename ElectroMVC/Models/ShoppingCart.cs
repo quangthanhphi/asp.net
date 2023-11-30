@@ -1,7 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace ElectroMVC.Models
 {
-	public class ShoppingCart
+    [NotMapped]
+    public class ShoppingCart
 	{
         public List<ShoppingCartItem>? Items { get; set; }
 
@@ -29,7 +33,7 @@ namespace ElectroMVC.Models
             var checkExists = Items?.SingleOrDefault(x => x.ProductId == id);
             if (checkExists != null)
 			{
-				Items.Remove(checkExists);
+               Items.Remove(checkExists);
 			}	
 
         }
@@ -63,7 +67,7 @@ namespace ElectroMVC.Models
 
 	public class ShoppingCartItem
 	{
-		public int ProductId { get; set; }
+        public int ProductId { get; set; }
 		public string? ProductName { get; set; }
 		public string? CategoryName { get; set; }
 		public string? ProductImg { get; set; }

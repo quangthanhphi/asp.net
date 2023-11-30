@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
+using ElectroMVC.Migrations;
 
 public static class SessionExtensions
 {
@@ -37,14 +38,48 @@ namespace ElectroMVC.Controllers
 
         public IActionResult Index()
         {
+            ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
+            if(cart != null)
+            {
+                return View(cart.Items);
+            }
             return View();
         }
 
+        public ActionResult ShowCount()
+        {
+            ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
+            if(cart != null)
+            {
+                return Json(new { Countc = cart.Items.Count });
+            }
+            return Json(new { Countc = 0});
+        }
+
         [HttpPost]
-        public ActionResult AddToCart(int id, int quantity)
+        public async Task<ActionResult> AddToCart(int id, int quantity)
         {
             var code = new { Success = false, msg = "", code = -1, Countc = 0 };
             var checkProduct = _context.Product.FirstOrDefault(x => x.Id == id);
+
+            var productViewModels = new List<ProductViewModel>();
+
+            
+                var productCategory = await _context.ProductCategory
+                    .Where(pc => pc.Id == checkProduct.ProductCategoryId)
+                    .FirstOrDefaultAsync();
+
+                if (productCategory != null)
+                {
+                    var productViewModel = new ProductViewModel
+                    {
+                        Product = checkProduct,
+                        ProductCategoryName = productCategory.Title
+                    };
+
+                    productViewModels.Add(productViewModel);
+                }
+            
 
             if (checkProduct != null)
             {
@@ -53,6 +88,7 @@ namespace ElectroMVC.Controllers
                 {
                     cart = new ShoppingCart();
                 }
+
                 if (cart.Items == null)
                 {
                     cart.Items = new List<ShoppingCartItem>();
@@ -67,10 +103,10 @@ namespace ElectroMVC.Controllers
                 };
 
                 // Check if ProductCategory is not null before accessing its properties
-                if (checkProduct.ProductCategory != null)
-                {
-                    item.CategoryName = checkProduct.ProductCategory.Title;
-                }
+
+                item.CategoryName = productViewModels.FirstOrDefault()?.ProductCategoryName; ;
+
+                //Console.WriteLine("ProductCategory Name: " + item.CategoryName);
 
                 // Check if Image is not null before accessing its properties
                 if (checkProduct.Image != null)
@@ -91,10 +127,29 @@ namespace ElectroMVC.Controllers
 
                 HttpContext.Session.SetObjectAsJson("Cart", cart);
                 code = new { Success = true, msg = "Thêm sản phẩm thành công", code = 1, Countc = cart.Items.Count };
-                
-                Console.WriteLine("Cart Item:" + cart.Items.Count);
+
+                //Console.WriteLine("Cart Item:" + cart.Items.Count);
             }
 
+            return Json(code);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id )
+        {
+            var code = new { Success = false, msg = "", code = -1, Countc = 0 };
+            ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
+            if (cart != null)
+            {
+                var checkProduct = _context.Product.FirstOrDefault(x => x.Id == id);
+                if(checkProduct != null)
+                {
+                    cart.Remove(id);
+                    HttpContext.Session.SetObjectAsJson("Cart", cart);
+                    code = new { Success = true, msg = "", code = 1, Countc = cart.Items.Count };
+                }
+            }
+            //Console.WriteLine("Đang xóa");
             return Json(code);
         }
 

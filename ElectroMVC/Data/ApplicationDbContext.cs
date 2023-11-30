@@ -36,5 +36,6 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<ElectroMVC.Models.ProductCategory> ProductCategory { get; set; } = default!;
     public DbSet<ElectroMVC.Models.Subscribe> Subscribe { get; set; } = default!;
     public DbSet<ElectroMVC.Models.SystemSetting> SystemSetting { get; set; } = default!;
+    
 }
 

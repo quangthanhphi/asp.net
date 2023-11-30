@@ -142,29 +142,9 @@
                                         <img src="@images[0]" alt="">
                                     }
                                 </div>
-                                <div class="tab_text_block">
-                                    <h2>@Model.Title</h2>
-                                    <p>@Model.Detail</p>
-                                </div>
+                                
                             </div>
-                            <div class="col-lg-5 offset-lg-2 desc_col">
-                                <div class="tab_image">
-                                    @{
-                                        string[] images1 = Model.Image?.Split(';');
-                                        <img src="@images1[1]" alt="">
-                                    }
-                                </div>
-                                <div class="tab_text_block">
-                                    <h2>@Model.Title</h2>
-                                    <p>@Model.Detail</p>
-                                </div>
-                                <div class="tab_image desc_last">
-                                    @{
-                                        string[] images2 = Model.Image?.Split(';');
-                                        <img src="@images2[2]" alt="">
-                                    }
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
 
