@@ -24,6 +24,8 @@
     <None Remove="Views\Shared\Components\MenuLeft\" />
     <None Remove="Views\Shared\Components\ProductCate\" />
     <None Remove="Views\ShoppingCart\" />
+    <None Remove="Views\Shared\Components\Partial_Item_Cart\" />
+    <None Remove="Views\Shared\Components\CheckOut\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -57,6 +59,8 @@
     <Folder Include="Views\Shared\Components\MenuLeft\" />
     <Folder Include="Views\Shared\Components\ProductCate\" />
     <Folder Include="Views\ShoppingCart\" />
+    <Folder Include="Views\Shared\Components\Partial_Item_Cart\" />
+    <Folder Include="Views\Shared\Components\CheckOut\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />

@@ -16,7 +16,7 @@
                 <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$@(item.Price - item.PriceSale)</span></div>
                 <div class="product_info">
                     <h6 class="product_name"><a href="/chi-tiet/@item.Id">@item.Title</a></h6>
-                    <div class="product_price">$@item.PriceSale<span>$@item.PriceSale</span></div>
+                    <div class="product_price">$@item.PriceSale<span>$@item.Price</span></div>
                 </div>
             </div>
             <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
@@ -36,7 +36,7 @@
                     <div class="product_price">$@item.PriceSale</div>
                 </div>
             </div>
-            <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
+            <div class="red_button add_to_cart_button "><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
         </div>
     }
 }

@@ -26,6 +26,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -54,6 +55,11 @@ app.MapControllerRoute(
     name: "san-pham",
     pattern: "san-pham",
     defaults: new { controller = "Home", action = "AllProducts" });
+
+app.MapControllerRoute(
+    name: "thanh-toan",
+    pattern: "thanh-toan",
+    defaults: new { controller = "ShoppingCart", action = "CheckOut" });
 
 app.MapControllerRoute(
     name: "gio-hang",

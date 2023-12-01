@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using ElectroMVC.Migrations;
+using System.ComponentModel;
 
 public static class SessionExtensions
 {
@@ -38,12 +39,19 @@ namespace ElectroMVC.Controllers
 
         public IActionResult Index()
         {
-            ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
-            if(cart != null)
-            {
-                return View(cart.Items);
-            }
+            
             return View();
+        }
+
+
+        public ActionResult Partial_Item_Cart()
+        {
+            return ViewComponent("Partial_Item_Cart");
+        }
+
+        public ActionResult CheckOut()
+        {
+            return ViewComponent("CheckOut");
         }
 
         public ActionResult ShowCount()
@@ -135,6 +143,21 @@ namespace ElectroMVC.Controllers
         }
 
         [HttpPost]
+        public ActionResult Update(int id, int quantity)
+        {
+            ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
+            if (cart != null)
+            {
+                cart.UpdateQuantity(id, quantity);
+                HttpContext.Session.SetObjectAsJson("Cart", cart);
+                return Json(new { Success = true, Countc = 0 }); ;
+            }
+            return Json(new { Success = false });
+
+        }
+
+
+        [HttpPost]
         public ActionResult Delete(int id )
         {
             var code = new { Success = false, msg = "", code = -1, Countc = 0 };
@@ -151,6 +174,22 @@ namespace ElectroMVC.Controllers
             }
             //Console.WriteLine("Đang xóa");
             return Json(code);
+        }
+
+        
+
+        [HttpPost]
+        public ActionResult DeleteAll()
+        {
+            ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
+            if(cart != null)
+            {
+                cart.ClearCart();
+                HttpContext.Session.SetObjectAsJson("Cart", cart);
+                return Json(new { Success = true, Countc = 0 }); ;
+            }
+            return Json(new { Success = false });
+
         }
 
     }

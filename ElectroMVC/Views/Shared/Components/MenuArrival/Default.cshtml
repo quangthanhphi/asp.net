@@ -31,27 +31,53 @@
                 <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
                     @foreach (var item in Model)
                     {
-                        <!-- Product 1 -->
-                        <div class="product-item @item.ProductCategoryId">
-                            <div class="product discount product_filter">
-                                <div class="product_image">
-                                    @{
-                                        string[] imageUrls = item.Image?.Split(';');
-                                        if (imageUrls != null && imageUrls.Length > 0)
-                                        {
-                                            <img src="@imageUrls[0]" alt="">
+                        if (item.IsSale == true)
+                        {
+                            <!-- Product 1 -->
+                            <div class="product-item @item.ProductCategoryId">
+                                <div class="product discount product_filter">
+                                    <div class="product_image">
+                                        @{
+                                            string[] imageUrls = item.Image?.Split(';');
+                                            if (imageUrls != null && imageUrls.Length > 0)
+                                            {
+                                                <img src="@imageUrls[0]" alt="">
+                                            }
                                         }
-                                    }
+                                    </div>
+                                    <div class="favorite favorite_left"></div>
+                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$@(item.Price - item.PriceSale)</span></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="/chi-tiet/@item.Id">@item.Title</a></h6>
+                                        <div class="product_price">$@item.PriceSale<span>$@item.Price</span></div>
+                                    </div>
                                 </div>
-                                <div class="favorite favorite_left"></div>
-                                <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$@(item.Price - item.PriceSale)</span></div>
-                                <div class="product_info">
-                                    <h6 class="product_name"><a href="">@item.Title</a></h6>
-                                    <div class="product_price">$@item.PriceSale<span>$@item.Price</span></div>
-                                </div>
+                                <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
                             </div>
-                            <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
-                        </div>
+                        }
+                        else
+                        {
+                            <!-- Product 1 -->
+                            <div class="product-item @item.ProductCategoryId">
+                                <div class="product discount product_filter">
+                                    <div class="product_image">
+                                        @{
+                                            string[] imageUrls = item.Image?.Split(';');
+                                            if (imageUrls != null && imageUrls.Length > 0)
+                                            {
+                                                <img src="@imageUrls[0]" alt="">
+                                            }
+                                        }
+                                    </div>
+                                    <div class="favorite favorite_left"></div>
+                                    <div class="product_info">
+                                        <h6 class="product_name"><a href="/chi-tiet/@item.Id">@item.Title</a></h6>
+                                        <div class="product_price">$@item.PriceSale</div>
+                                    </div>
+                                </div>
+                                <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
+                            </div>
+                        }
                     }
                 </div>
             </div>

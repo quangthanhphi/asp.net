@@ -61,7 +61,7 @@ namespace ElectroMVC.Models
 
 		public void ClearCart()
 		{
-			Items?.Clear();
+			Items.Clear();
 		}
     }
 
