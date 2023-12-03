@@ -1,23 +1,18 @@
-﻿using System;
+﻿// MenuViewComponent.cs
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ElectroMVC.Data;
-using Microsoft.AspNetCore.Mvc;
 using ElectroMVC.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
-using Microsoft.AspNetCore.Http;
-using ElectroMVC.Migrations;
-using System.ComponentModel;
 
-
-public class CheckOutViewComponent : ViewComponent
+public class CheckOutPartialViewComponent: ViewComponent
 {
     private readonly ApplicationDbContext _context;
 
-    public CheckOutViewComponent(ApplicationDbContext context)
+    public CheckOutPartialViewComponent(ApplicationDbContext context)
     {
         _context = context;
     }
@@ -32,6 +27,6 @@ public class CheckOutViewComponent : ViewComponent
         }
         return View();
     }
+        
 
-    
 }

@@ -26,6 +26,9 @@
     <None Remove="Views\ShoppingCart\" />
     <None Remove="Views\Shared\Components\Partial_Item_Cart\" />
     <None Remove="Views\Shared\Components\CheckOut\" />
+    <None Remove="Views\Shared\Components\CheckOutPartial\" />
+    <None Remove="Views\Shared\Components\CheckOutSuccess\" />
+    <None Remove="Views\Shared\Components\CheckOutContent\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -42,6 +45,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="jQuery" Version="3.7.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +65,9 @@
     <Folder Include="Views\ShoppingCart\" />
     <Folder Include="Views\Shared\Components\Partial_Item_Cart\" />
     <Folder Include="Views\Shared\Components\CheckOut\" />
+    <Folder Include="Views\Shared\Components\CheckOutPartial\" />
+    <Folder Include="Views\Shared\Components\CheckOutSuccess\" />
+    <Folder Include="Views\Shared\Components\CheckOutContent\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />

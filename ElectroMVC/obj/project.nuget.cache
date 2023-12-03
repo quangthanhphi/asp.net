@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3PU1ov9V9b177VI2FPSG61sIe+6dPR/DxfCeHyoe7j7PX4Vd3e0b+f1CpAVjy/7vl3b5+blWU5SlupVIInWBbg==",
+  "dgSpecHash": "+9JXekM4NcyETpK0fLeBXGTskxqtTWr93bWPIPk5PE3gBtuoAB08mSN73zkTIFIxuwO1QlajhfazKDYKgMe5Ig==",
   "success": true,
   "projectFilePath": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/ElectroMVC.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "/Users/phiquangthanh/.nuget/packages/humanizer.core.zh-cn/2.14.1/humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "/Users/phiquangthanh/.nuget/packages/humanizer.core.zh-hans/2.14.1/humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "/Users/phiquangthanh/.nuget/packages/humanizer.core.zh-hant/2.14.1/humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "/Users/phiquangthanh/.nuget/packages/jquery/3.7.1/jquery.3.7.1.nupkg.sha512",
     "/Users/phiquangthanh/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.13/microsoft.aspnetcore.cryptography.internal.7.0.13.nupkg.sha512",
     "/Users/phiquangthanh/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/7.0.13/microsoft.aspnetcore.cryptography.keyderivation.7.0.13.nupkg.sha512",
     "/Users/phiquangthanh/.nuget/packages/microsoft.aspnetcore.dataprotection/2.2.0/microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",

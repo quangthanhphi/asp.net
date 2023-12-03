@@ -1,6 +1,6 @@
-﻿@*@model ElectroMVC.Models.Order*@
+﻿
 @{
-    ViewData["Title"] = "Thanh toán";
+    ViewData["Title"] = "Đặt hàng thành công";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
@@ -26,34 +26,12 @@
             </div>
 
             <!-- Main Content -->
+
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1>Thanh toán</h1>
-                    <p>Bạn hãy kiểm tra lại thông tin đơn hàng</p>
+                <div class="col-md-12" id="load_data">
+                  <h2>Bạn đã mua hàng thành công</h2>
                 </div>
             </div>
-            <hr />
-            @if (ViewBag.CheckCart != null)
-            {
-                <div class="row">
-                    <div style="display:none" id="show_success"></div>
-                    <div class="col-md-8">
-                        @await Component.InvokeAsync("CheckOutContent") 
-
-                    </div>
-                    <div class="col-md-4">
-                        @await Component.InvokeAsync("CheckOutPartial");
-                    </div>
-                </div>
-            }
-            else
-            {
-                <div>
-                    Bạn chưa có sản phẩm nào. Vui lòng quay lại trang <a href="/san-pham">sản phẩm</a> để thêm sản phẩm.
-                </div>
-            }
-
-
 
         </div>
     </div>
@@ -90,13 +68,3 @@
 <script src="~/assets/plugins/easing/easing.js"></script>
 <script src="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="~/assets/js/categories_custom.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-    //function OnSuccessCO(rs) {
-    //    event.preventDefault();
-    //    if (!rs.success) {
-    //        $('#show_success').html("Bạn mua hàng thất bại");
-    //    }
-    //}
-</script>

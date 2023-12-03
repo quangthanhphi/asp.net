@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ElectroMVC.Models.ShoppingCartItem>
+@if (Model != null && Model.Any())
+{
+    <h3>Giỏ hàng: <span style="float:right;">@Model.Count() sản phẩm</span> </h3>
+    var i = 0;
+    var tongtien = decimal.Zero;
+
+    <table class="table">
+
+        @foreach (var item in Model)
+        {
+            string[] imgUrl = item.ProductImg.Split(';');
+            tongtien += item.TotalPrice;
+            <tr>
+                <td><img src="@imgUrl[0]" style="height:100px;" /></td>
+                <td>@item.ProductName</td>
+                <td>$@item.Price</td>
+            </tr>
+        }
+        <tr>
+            <th></th>
+            <th class="text-right">Tổng tiền</th>
+            <th class="text-right">$@tongtien</th>
+        </tr>
+    </table>
+}
+
+

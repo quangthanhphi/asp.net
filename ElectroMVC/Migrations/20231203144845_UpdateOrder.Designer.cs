@@ -3,6 +3,7 @@ using System;
 using ElectroMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElectroMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231203144845_UpdateOrder")]
+    partial class UpdateOrder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,9 +214,11 @@ namespace ElectroMVC.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Code")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("CreatedBy")
@@ -223,9 +228,11 @@ namespace ElectroMVC.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("CustomerName")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ModifiedBy")
@@ -235,6 +242,7 @@ namespace ElectroMVC.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("Quantity")

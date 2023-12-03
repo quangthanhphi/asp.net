@@ -1,0 +1,45 @@
+﻿@model ElectroMVC.Models.OrderViewModel
+<form id="checkoutForm" asp-controller="ShoppingCart" asp-action="CheckOut1" method="post" onsubmit="return OnSuccessCO">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <h3>Thông tin khách hàng</h3>
+    <div class="form-group">
+        <label>Họ tên khách hàng</label>
+        <input type="text" name="Order.CustomerName" class="form-control" autocomplete="off" />
+        <span asp-validation-for="Order.CustomerName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Số điện thoại</label>
+        <input type="text" name="Order.Phone" class="form-control" autocomplete="off" />
+        <span asp-validation-for="Order.Phone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Địa chỉ </label>
+        <input type="text" name="Order.Address" class="form-control" autocomplete="off" />
+        <span asp-validation-for="Order.Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="Order.Email" class="form-control" autocomplete="off" />
+        <span asp-validation-for="Order.Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Hình thức thanh toán</label>
+        <select name="Order.TypePayment" class="form-control">
+            <option value="1" selected>COD</option>
+            <option value="2">Chuyển khoản</option>
+        </select>
+        <span asp-validation-for="Order.TypePayment" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Đặt hàng" class="btn btn-block btn-success" />
+    </div>
+
+</form>
+
+

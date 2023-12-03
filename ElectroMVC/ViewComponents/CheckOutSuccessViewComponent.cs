@@ -13,11 +13,11 @@ using ElectroMVC.Migrations;
 using System.ComponentModel;
 
 
-public class CheckOutViewComponent : ViewComponent
+public class CheckOutSuccessViewComponent : ViewComponent
 {
     private readonly ApplicationDbContext _context;
 
-    public CheckOutViewComponent(ApplicationDbContext context)
+    public CheckOutSuccessViewComponent(ApplicationDbContext context)
     {
         _context = context;
     }

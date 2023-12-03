@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using ElectroMVC.Migrations;
 using System.ComponentModel;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 public static class SessionExtensions
 {
@@ -54,6 +55,12 @@ namespace ElectroMVC.Controllers
             return ViewComponent("CheckOut");
         }
 
+        public ActionResult CheckOutSuccess()
+        {
+            return ViewComponent("CheckOutSuccess");
+        }
+
+
         public ActionResult ShowCount()
         {
             ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
@@ -62,6 +69,55 @@ namespace ElectroMVC.Controllers
                 return Json(new { Countc = cart.Items.Count });
             }
             return Json(new { Countc = 0});
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CheckOut1 (OrderViewModel req)
+        {
+            Console.WriteLine("Giá trị của req: " + req);
+            Console.WriteLine("Giá trị của req Order: " + req.Order);
+            Console.WriteLine("Giá trị của req OrderName: " + req.Order.CustomerName);
+            Console.WriteLine("Giá trị của req Email: " + req.Order.Email);
+            Console.WriteLine("Giá trị của req Address: " + req.Order.Address);
+            Console.WriteLine("Giá trị của req Phone: " + req.Order.Phone);
+
+            var code = new { Success = false, Code = -1 };
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("Lỗi");
+            }
+
+            if (ModelState.IsValid)
+            {
+                Console.WriteLine("Hợp lệ");
+                ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
+                if (cart != null && req.Order != null)
+                {
+                    Console.WriteLine("cart và order khác null");
+                    Models.Order order = new Models.Order();
+                    order.CustomerName = req.Order.CustomerName;
+                    order.Phone = req.Order.Phone;
+                    order.Address = req.Order.Address;  
+                    cart.Items.ForEach(x => order.orderDetails.Add(new Models.OrderDetail
+                    {
+                        ProductId = x.ProductId,
+                        Quantity = x.Quantity,
+                        Price = x.Price
+                    }));
+                    order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
+                    order.TypePayment = req.Order.TypePayment;
+                    order.CreatedDate = DateTime.Now;
+                    order.ModifiedDate = DateTime.Now;
+                    order.CreatedBy = req.Order.Phone;
+                    Random rd = new Random();
+                    order.Code = "DH" + rd.Next(0,9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
+                    _context.Add(order);
+                    _context.SaveChanges();
+                    return RedirectToAction("CheckOutSuccess");
+                }
+            }
+            return Json(code);
         }
 
         [HttpPost]
@@ -155,6 +211,7 @@ namespace ElectroMVC.Controllers
             return Json(new { Success = false });
 
         }
+        
 
 
         [HttpPost]
