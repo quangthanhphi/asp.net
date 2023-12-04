@@ -8,6 +8,7 @@ namespace ElectroMVC.Models
     {
         public Order? Order { get; set; }
         public OrderDetail? OrderDetail { get; set; }
+        public string? ProductName { get; set; }
 
         //public IEnumerator<OrderViewModel> GetEnumerator()
         //{

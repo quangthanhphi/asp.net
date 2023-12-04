@@ -19,7 +19,7 @@ public class CheckOutContentViewComponent: ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        var orderViewModel = new OrderViewModel(); // Thay bằng cách lấy từ nguồn dữ liệu thích hợp
+        var orderViewModel = new OrderViewModel(); 
         return View(orderViewModel);
     }
 

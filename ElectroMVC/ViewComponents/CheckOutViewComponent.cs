@@ -25,7 +25,7 @@ public class CheckOutViewComponent : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         ShoppingCart cart = HttpContext.Session.GetObjectFromJson<ShoppingCart>("Cart");
-        if (cart != null)
+        if (cart != null && cart.Items.Any())
         {
             ViewBag.CheckCart = cart;
             return View(cart.Items);

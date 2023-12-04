@@ -29,6 +29,7 @@
     <None Remove="Views\Shared\Components\CheckOutPartial\" />
     <None Remove="Views\Shared\Components\CheckOutSuccess\" />
     <None Remove="Views\Shared\Components\CheckOutContent\" />
+    <None Remove="Views\Shared\Components\OrderPartial\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -46,6 +47,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="jQuery" Version="3.7.1" />
+    <PackageReference Include="PagedList" Version="1.17.0" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+    <PackageReference Include="X.PagedList.Web.Common" Version="8.0.7" />
+    <PackageReference Include="X.PagedList.Mvc" Version="8.0.7" />
+    <PackageReference Include="X.PagedList" Version="8.4.7" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,6 +75,7 @@
     <Folder Include="Views\Shared\Components\CheckOutPartial\" />
     <Folder Include="Views\Shared\Components\CheckOutSuccess\" />
     <Folder Include="Views\Shared\Components\CheckOutContent\" />
+    <Folder Include="Views\Shared\Components\OrderPartial\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />

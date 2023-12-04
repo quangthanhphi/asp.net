@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ElectroMVC.Data;
 using ElectroMVC.Models;
+using X.PagedList;
+using X.PagedList.Mvc.Core;
 
 namespace ElectroMVC.Controllers
 {
@@ -20,11 +22,19 @@ namespace ElectroMVC.Controllers
         }
 
         // GET: Order
-        public async Task<IActionResult> Index()
+        public ActionResult Index(int? page)
         {
-              return _context.Order != null ? 
-                          View(await _context.Order.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Order'  is null.");
+            var item = _context.Order.OrderByDescending(x => x.CreatedDate).ToList();
+            if(page == null)
+            {
+                page = 1;
+            }
+            var pageNumber = page ?? 1;
+            var pageSize = 5;
+            return View(item.ToPagedList(pageNumber, pageSize));
+              //return _context.Order != null ? 
+              //            View(await _context.Order.ToListAsync()) :
+              //            Problem("Entity set 'ApplicationDbContext.Order'  is null.");
         }
 
         // GET: Order/Details/5
@@ -43,6 +53,27 @@ namespace ElectroMVC.Controllers
             }
 
             return View(order);
+        }
+
+        public ActionResult Partial(int id)
+        {
+            return ViewComponent("OrderPartial",id);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateTT(int id, int trangthai)
+        {
+            var item = _context.Order.Find(id);
+            if(item != null)
+            {
+                _context.Order.Attach(item);
+                item.TypePayment = trangthai;
+                _context.Entry(item).Property(x => x.TypePayment).IsModified = true;
+                _context.SaveChanges();
+                return Json(new { message = "Success", Success = true });   
+            }
+            return Json(new { message = "Fail", Success = false });
+
         }
 
         // GET: Order/Create

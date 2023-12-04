@@ -105,6 +105,7 @@ namespace ElectroMVC.Controllers
                         Quantity = x.Quantity,
                         Price = x.Price
                     }));
+                    Console.WriteLine("Số lượng: " + cart.Items.Count());
                     order.TotalAmount = cart.Items.Sum(x => (x.Price * x.Quantity));
                     order.TypePayment = req.Order.TypePayment;
                     order.CreatedDate = DateTime.Now;
@@ -114,6 +115,8 @@ namespace ElectroMVC.Controllers
                     order.Code = "DH" + rd.Next(0,9) + rd.Next(0, 9) + rd.Next(0, 9) + rd.Next(0, 9);
                     _context.Add(order);
                     _context.SaveChanges();
+                    cart.ClearCart();
+                    HttpContext.Session.SetObjectAsJson("Cart", cart);
                     return RedirectToAction("CheckOutSuccess");
                 }
             }

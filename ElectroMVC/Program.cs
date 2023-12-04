@@ -57,6 +57,11 @@ app.MapControllerRoute(
     defaults: new { controller = "Home", action = "AllProducts" });
 
 app.MapControllerRoute(
+    name: "san-pham",
+    pattern: "/ShoppingCart/san-pham",
+    defaults: new { controller = "Home", action = "AllProducts" });
+
+app.MapControllerRoute(
     name: "thanh-toan",
     pattern: "thanh-toan",
     defaults: new { controller = "ShoppingCart", action = "CheckOut" });
