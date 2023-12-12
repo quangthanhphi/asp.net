@@ -30,6 +30,8 @@ namespace ElectroMVC.Models
 
         public int TypePayment { get; set; }
 
+        public int Status { get; set; }
+
         public ICollection<OrderDetail> orderDetails { get; set; }
     }
 }

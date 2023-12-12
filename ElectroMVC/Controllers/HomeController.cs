@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ElectroMVC.Models;
 
@@ -14,6 +14,16 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
+    {
+        return View();
+    }
+
+    public IActionResult Index1()
+    {
+        return View();
+    }
+
+    public IActionResult Contact()
     {
         return View();
     }

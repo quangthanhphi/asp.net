@@ -30,6 +30,11 @@
     <None Remove="Views\Shared\Components\CheckOutSuccess\" />
     <None Remove="Views\Shared\Components\CheckOutContent\" />
     <None Remove="Views\Shared\Components\OrderPartial\" />
+    <None Remove="Views\Role\" />
+    <None Remove="Views\Account\" />
+    <None Remove="Views\AdminLogin\" />
+    <None Remove="Views\Shared\Components\News\" />
+    <None Remove="Models\Payments\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
@@ -53,6 +58,13 @@
     <PackageReference Include="X.PagedList.Mvc" Version="8.0.7" />
     <PackageReference Include="X.PagedList" Version="8.4.7" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.4" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -76,6 +88,11 @@
     <Folder Include="Views\Shared\Components\CheckOutSuccess\" />
     <Folder Include="Views\Shared\Components\CheckOutContent\" />
     <Folder Include="Views\Shared\Components\OrderPartial\" />
+    <Folder Include="Views\Role\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\AdminLogin\" />
+    <Folder Include="Views\Shared\Components\News\" />
+    <Folder Include="Models\Payments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\images\" />

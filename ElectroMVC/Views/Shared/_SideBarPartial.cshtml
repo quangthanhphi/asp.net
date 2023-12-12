@@ -12,15 +12,15 @@
 
     <!-- SidebarSearch Form -->
     @*<div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                    <i class="fas fa-search fa-fw"></i>
-                </button>
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -57,6 +57,15 @@
             </ul>*@
             </li>
             <li class="nav-item">
+                <a href="/Role" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Role
+                        @*<span class="right badge badge-danger">New</span>*@
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="/News" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
@@ -65,15 +74,15 @@
                     </p>
                 </a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a href="/Posts" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                        Bài viết
+                        Bài viết-->
                         @*<span class="right badge badge-danger">New</span>*@
-                    </p>
+                    <!--</p>
                 </a>
-            </li>
+            </li>-->
             <li class="nav-item">
                 <a href="/Order" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
@@ -83,15 +92,15 @@
                     </p>
                 </a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a href="/post" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                        Quảng cáo
+                        Quảng cáo-->
                         @*<span class="right badge badge-danger">New</span>*@
-                    </p>
+                    <!--</p>
                 </a>
-            </li>
+            </li>-->
             <li class="nav-item">
                 <a href="/Category" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -117,16 +126,40 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="/post" class="nav-link">
+                <a href="/Account" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>
-                        Cấu hình hệ thống
+                        Tài khoản
                         @*<span class="right badge badge-danger">New</span>*@
                     </p>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <form id="logOffForm" asp-controller="Account" asp-action="Logoff" method="post">
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:void(0)" class="nav-link" onclick="document.getElementById('logOffForm').submit()">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Đăng xuất
+                            @*<span class="right badge badge-danger">New</span>*@
+                        </p>
+                    </a>
+                </form>
+            </li>
+
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
 </div>
 <!-- /.sidebar -->
+
+@if (!ViewContext.HttpContext.User.Identity.IsAuthenticated)
+{
+    <div style="display:none">
+        @using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { @id = "logOffForm" }))
+        {
+            @Html.AntiForgeryToken()
+        }
+    </div>
+}

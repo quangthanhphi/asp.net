@@ -38,7 +38,7 @@
                 <div class="row">
                     <div style="display:none" id="show_success"></div>
                     <div class="col-md-8">
-                        @await Component.InvokeAsync("CheckOutContent") 
+                        @await Component.InvokeAsync("CheckOutContent")
 
                     </div>
                     <div class="col-md-4">
@@ -92,11 +92,66 @@
 <script src="~/assets/js/categories_custom.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
-    //function OnSuccessCO(rs) {
-    //    event.preventDefault();
-    //    if (!rs.success) {
-    //        $('#show_success').html("Bạn mua hàng thất bại");
-    //    }
-    //}
-</script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>function OnBeginCO() {
+        $('#btnCheckOut').attr("disabled", "disabled");
+        $('#load_send').html('<h3>Đang chuyển....</h2>');
+    }
+
+    function OnSuccessCO(rs) {
+        event.preventDefault();
+        if (rs.success) {
+            if (rs.code == 1) {
+                location.href = "/ShoppingCart/CheckOutSuccess";
+            } else {
+                location.href = rs.url;
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        $('#checkoutForm').submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: form.serialize(),
+                beforeSend: function () {
+                    OnBeginCO();
+                },
+                success: function (result) {
+                    OnSuccessCO(result);
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    });</script>
+<script>$(document).ready(function () {
+        $('body').on('change', '#drTypePayment', function () {
+            var type = $(this).val();
+            $('#load_form_payment').hide();
+            if (type == "2") {
+                $('#load_form_payment').show();
+            }
+        });
+        //$('#myForm').validate({
+        //    rules: {
+        //        'CustomerName': {
+        //            required: true
+        //        },
+        //        'Phone': {
+        //            required:true
+        //        },
+        //        'Address': {
+        //            required: true
+        //        },
+        //        'Email': {
+        //            required: true
+        //        },
+        //    }
+        //})
+    })</script>

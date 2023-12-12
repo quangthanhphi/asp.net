@@ -7901,6 +7901,286 @@
       "PackagePath": "staticwebassets/assets/.DS_Store"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/adminlte.css",
+      "PackagePath": "staticwebassets/assets/dist/css/adminlte.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/adminlte.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/adminlte.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/adminlte.min.css",
+      "PackagePath": "staticwebassets/assets/dist/css/adminlte.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/adminlte.min.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/adminlte.min.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.components.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.components.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.components.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.components.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.components.min.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.components.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.components.min.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.components.min.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.core.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.core.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.core.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.core.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.core.min.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.core.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.core.min.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.core.min.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.extra-components.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.extra-components.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.extra-components.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.extra-components.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.extra-components.min.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.extra-components.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.extra-components.min.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.extra-components.min.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.light.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.light.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.light.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.light.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.light.min.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.light.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.light.min.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.light.min.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.pages.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.pages.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.pages.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.pages.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.pages.min.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.pages.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.pages.min.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.pages.min.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.plugins.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.plugins.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.plugins.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.plugins.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.plugins.min.css",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.plugins.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/alt/adminlte.plugins.min.css.map",
+      "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.plugins.min.css.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/AdminLTELogo.png",
+      "PackagePath": "staticwebassets/assets/dist/img/AdminLTELogo.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/avatar.png",
+      "PackagePath": "staticwebassets/assets/dist/img/avatar.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/avatar2.png",
+      "PackagePath": "staticwebassets/assets/dist/img/avatar2.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/avatar3.png",
+      "PackagePath": "staticwebassets/assets/dist/img/avatar3.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/avatar4.png",
+      "PackagePath": "staticwebassets/assets/dist/img/avatar4.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/avatar5.png",
+      "PackagePath": "staticwebassets/assets/dist/img/avatar5.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/boxed-bg.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/boxed-bg.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/boxed-bg.png",
+      "PackagePath": "staticwebassets/assets/dist/img/boxed-bg.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/credit/american-express.png",
+      "PackagePath": "staticwebassets/assets/dist/img/credit/american-express.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/credit/cirrus.png",
+      "PackagePath": "staticwebassets/assets/dist/img/credit/cirrus.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/credit/mastercard.png",
+      "PackagePath": "staticwebassets/assets/dist/img/credit/mastercard.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/credit/paypal.png",
+      "PackagePath": "staticwebassets/assets/dist/img/credit/paypal.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/credit/paypal2.png",
+      "PackagePath": "staticwebassets/assets/dist/img/credit/paypal2.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/credit/visa.png",
+      "PackagePath": "staticwebassets/assets/dist/img/credit/visa.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/default-150x150.png",
+      "PackagePath": "staticwebassets/assets/dist/img/default-150x150.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/icons.png",
+      "PackagePath": "staticwebassets/assets/dist/img/icons.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/photo1.png",
+      "PackagePath": "staticwebassets/assets/dist/img/photo1.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/photo2.png",
+      "PackagePath": "staticwebassets/assets/dist/img/photo2.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/photo3.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/photo3.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/photo4.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/photo4.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/prod-1.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/prod-1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/prod-2.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/prod-2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/prod-3.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/prod-3.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/prod-4.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/prod-4.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/prod-5.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/prod-5.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/user1-128x128.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/user1-128x128.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/user2-160x160.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/user2-160x160.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/user3-128x128.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/user3-128x128.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/user4-128x128.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/user4-128x128.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/user5-128x128.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/user5-128x128.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/user6-128x128.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/user6-128x128.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/user7-128x128.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/user7-128x128.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/user8-128x128.jpg",
+      "PackagePath": "staticwebassets/assets/dist/img/user8-128x128.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/.eslintrc.json",
+      "PackagePath": "staticwebassets/assets/dist/js/.eslintrc.json"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/adminlte.js",
+      "PackagePath": "staticwebassets/assets/dist/js/adminlte.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/adminlte.js.map",
+      "PackagePath": "staticwebassets/assets/dist/js/adminlte.js.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/adminlte.min.js",
+      "PackagePath": "staticwebassets/assets/dist/js/adminlte.min.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/adminlte.min.js.map",
+      "PackagePath": "staticwebassets/assets/dist/js/adminlte.min.js.map"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/demo.js",
+      "PackagePath": "staticwebassets/assets/dist/js/demo.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/pages/dashboard.js",
+      "PackagePath": "staticwebassets/assets/dist/js/pages/dashboard.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/pages/dashboard2.js",
+      "PackagePath": "staticwebassets/assets/dist/js/pages/dashboard2.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/pages/dashboard3.js",
+      "PackagePath": "staticwebassets/assets/dist/js/pages/dashboard3.js"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/banner_1.jpg",
       "PackagePath": "staticwebassets/assets/images/banner_1.jpg"
     },
@@ -30485,8 +30765,16 @@
       "PackagePath": "staticwebassets/images/07648a52-ab5b-4f9e-8bac-cfa2ead0c759_Photo-Competition-Blog.jpg"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/0fa4f7fa-a97d-4117-ac36-679415cda0c7_MW-20220811-TNF-CTSS-0193-1200.jpg",
+      "PackagePath": "staticwebassets/images/0fa4f7fa-a97d-4117-ac36-679415cda0c7_MW-20220811-TNF-CTSS-0193-1200.jpg"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/16075563-a93d-40d8-9e1e-138fb4e11793_single_2_thumb.jpg",
       "PackagePath": "staticwebassets/images/16075563-a93d-40d8-9e1e-138fb4e11793_single_2_thumb.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/22dcd47f-2ad6-4a8e-9fc0-a5c4eb7dfdb8_Emily(1).jpg",
+      "PackagePath": "staticwebassets/images/22dcd47f-2ad6-4a8e-9fc0-a5c4eb7dfdb8_Emily(1).jpg"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/37cd04fb-2b92-4c49-97c4-c4b59a4e4fb2_product_2.png",
@@ -30503,6 +30791,10 @@
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/4fe96081-a68e-4a2b-ad94-0ba74a21c44d_product_1.png",
       "PackagePath": "staticwebassets/images/4fe96081-a68e-4a2b-ad94-0ba74a21c44d_product_1.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/600156b7-7681-47df-b29b-ccf8f65588b5_TheoLansbury_AlpineOdyssey_1.jpg",
+      "PackagePath": "staticwebassets/images/600156b7-7681-47df-b29b-ccf8f65588b5_TheoLansbury_AlpineOdyssey_1.jpg"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/68914457-3498-482b-a6a4-7995ed0df64e_banner_1.jpg",

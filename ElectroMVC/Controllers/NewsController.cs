@@ -38,23 +38,20 @@ namespace ElectroMVC.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: News/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: News/Info/5
+        public IActionResult Info(int id)
         {
-            if (id == null || _context.News == null)
-            {
-                return NotFound();
-            }
+            var item = _context.News.Find(id);
+            Console.WriteLine("Item là: " + item);
+            Console.WriteLine("Id là: " + id);
+            return View(item);
+        }
 
-            var news = await _context.News
-                .Include(n => n.Category)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (news == null)
-            {
-                return NotFound();
-            }
-
-            return View(news);
+        // GET: News/Details/5
+        public async Task<IActionResult> Details()
+        {
+            var items = await _context.News.ToListAsync();
+            return View(items);
         }
 
         // GET: News/Create

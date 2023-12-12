@@ -1,0 +1,66 @@
+﻿@model ElectroMVC.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Đăng ký Tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="navbar-nav">
+    <div class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+    </div>
+    <div class="nav-item d-none d-sm-inline-block">
+        <a href="/Admin" class="nav-link">Trang chủ</a>
+    </div>
+    <div class="nav-item d-none d-sm-inline-block">
+        <a href="/Admin" class="nav-link">@ViewBag.Title</a>
+    </div>
+</div>
+
+<br />
+<br />
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Đăng ký Tài khoản</h3>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+            {
+                @Html.ValidationSummary(false);
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label>Tài khoản</label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Nhập lại mật khẩu</label>
+                    @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control" })
+                </div>
+                <div class="form-group" style="display:none">
+                    <label>Quyền</label>
+                    <select class="form-control" name="Role">
+                        <option value="21cd029b-02f8-466c-bc7d-d5996d6fe555" selected>Giá trị mặc định</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Đăng ký </button>
+                </div>
+            }
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            Footer
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->

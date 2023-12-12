@@ -63,14 +63,29 @@
                                         </ul>
                                     </li>
                                     <li class="account">
-                                        <a href="~/assets/#">
-                                            My Account
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="account_selection">
-                                            <li><a href="~/assets/#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                            <li><a href="~/assets/#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                                        </ul>
+
+                                        @if (Context.User.Identity.IsAuthenticated)
+                                        {
+                                            <a href="/Account/Login">
+                                                Welcome
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="account_selection">
+                                                @*<li><a href="/"><i class="fa fa-sign-in" aria-hidden="true"></i>Welcome @Context.User.Identity.Name</a></li>*@
+                                                <li><a href="/Account/Login"><i class="fa fa-user-plus" aria-hidden="true"></i>Logout</a></li>
+                                            </ul>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Account/Login">
+                                                My account
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="account_selection">
+                                                <li><a href="/Account/Login"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                                                <li><a href="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                            </ul>
+                                        }
                                     </li>
                                 </ul>
                             </div>
@@ -144,13 +159,13 @@
                         </ul>
                     </li>
                     <li class="menu_item has-children">
-                        <a href="~/assets/#">
+                        <a href="account/login">
                             My Account
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="menu_selection">
-                            <li><a href="~/assets/#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                            <li><a href="~/assets/#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                            <li><a href="account/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                            <li><a href="account/register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
                         </ul>
                     </li>
                     <li class="menu_item"><a href="~/assets/#">home</a></li>
@@ -209,7 +224,7 @@
     <script src="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
     <script src="~/assets/plugins/easing/easing.js"></script>
     <script src="~/assets/js/custom.js"></script>
-    <script src="~/js/jsShopping.js"></script>   
+    <script src="~/js/jsShopping.js"></script>
 </body>
 
 </html>

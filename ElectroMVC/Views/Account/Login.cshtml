@@ -1,0 +1,70 @@
+﻿@model ElectroMVC.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="card-body login-card-body">
+    <p class="login-box-msg">Đăng nhập để vào</p>
+
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="input-group mb-3">
+            <input type="text" asp-for="UserName" class="form-control" placeholder="Username" required />
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+            </div>
+            <div class="invalid-feedback">
+                Please enter your username.
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="password" asp-for="Password" class="form-control" placeholder="Password" required />
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock" id="togglePassword"></span>
+                </div>
+            </div>
+            <div class="invalid-feedback">
+                Please enter your password.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="icheck-primary">
+                    <input type="checkbox" asp-for="RememberMe" />
+                    <label for="remember">
+                        Remember Me
+                    </label>
+                </div>
+            </div>
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </div>
+        </div>
+    }
+
+    @*<p class="mb-1">
+        <a href="#">I forgot my password</a>
+    </p>*@
+</div>
+
+@section scripts {
+    <script>// Toggle password visibility
+        var passwordInput = document.getElementById("passwordInput");
+        var togglePassword = document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("click", function () {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        });</script>
+}

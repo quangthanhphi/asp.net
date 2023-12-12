@@ -4,14 +4,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using ElectroMVC.Data;
 using Microsoft.AspNetCore.Mvc;
-using ElectroMVC.Models;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore; // Keep this for Entity Framework Core
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using ElectroMVC.Migrations;
 using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using ElectroMVC.Models.Payments;
+using ElectroMVC.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
 
 public static class SessionExtensions
 {
@@ -31,16 +35,87 @@ namespace ElectroMVC.Controllers
 {
     public class ShoppingCartController : Controller
     {
+        private readonly IConfiguration _configuration;
         private readonly ApplicationDbContext _context;
-
-        public ShoppingCartController(ApplicationDbContext context)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public ShoppingCartController(ApplicationDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
         {
             
+            return View();
+        }
+
+        public ActionResult VNpayReturn()
+        {
+            try
+            {
+                if (Request.Query.Count() > 0)
+                {
+                    string vnp_HashSecret = _configuration["VNPAY:HashSecret"]; //Chuoi bi mat
+                    var vnpayData = Request.Query;
+                    VnPayLibrary vnpay = new VnPayLibrary();
+
+                    foreach (var key in vnpayData.Keys)
+                    {
+                        var value = vnpayData[key];
+                        // get all querystring data
+                        if (!string.IsNullOrEmpty(key) && key.StartsWith("vnp_"))
+                        {
+                            vnpay.AddResponseData(key, value);
+                        }
+                    }
+
+                    string orderCode= Convert.ToString(vnpay.GetResponseData("vnp_TxnRef"));
+                    long vnpayTranId = Convert.ToInt64(vnpay.GetResponseData("vnp_TransactionNo"));
+                    string vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+                    string vnp_TransactionStatus = vnpay.GetResponseData("vnp_TransactionStatus");
+                    long vnp_Amount = Convert.ToInt64(vnpay.GetResponseData("vnp_Amount")) / 100;
+                    String vnp_SecureHash = Request.Query["vnp_SecureHash"].FirstOrDefault();
+                    String TerminalID = Request.Query["vnp_TmnCode"].FirstOrDefault();
+                    String bankCode = Request.Query["vnp_BankCode"].FirstOrDefault();
+
+
+                    bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, vnp_HashSecret);
+                    if (checkSignature)
+                    {
+                        if (vnp_ResponseCode == "00" && vnp_TransactionStatus == "00")
+                        {
+                            var itemOrder = _context.Order.FirstOrDefault(x => x.Code == orderCode);
+                            if (itemOrder != null)
+                            {
+                                itemOrder.Status = 2;//Đã thanh toán
+                                _context.Order.Attach(itemOrder);
+                                _context.Entry(itemOrder).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                                _context.SaveChanges();
+                            }
+                            ViewBag.InnerText = "Giao dịch được thực hiện thành công. Cảm ơn quý khách đã sử dụng dịch vụ";
+                            // log.InfoFormat("Thanh toan thanh cong, OrderId={0}, VNPAY TranId={1}", orderId, vnpayTranId);
+                        }
+                        else
+                        {
+                            ViewBag.InnerText = "Có lỗi xảy ra trong quá trình xử lý.Mã lỗi: " + vnp_ResponseCode;
+                            // log.InfoFormat("Thanh toan loi, OrderId={0}, VNPAY TranId={1},ResponseCode={2}", orderId, vnpayTranId, vnp_ResponseCode);
+                        }
+                        //displayTmnCode.InnerText = "Mã Website (Terminal ID):" + TerminalID;
+                        ViewBag.MaGiaoDich = "Mã giao dịch thanh toán:" + orderCode.ToString();
+                        ViewBag.MaGiaoDichVNP = "Mã giao dịch tại VNPAY:" + vnpayTranId.ToString();
+                        ViewBag.ThanhToanThanhCong = "Số tiền thanh toán (VND):" + vnp_Amount.ToString();
+                        ViewBag.NganHang = "Ngân hàng thanh toán:" + bankCode;
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+              Console.WriteLine( "An error occurred: " + ex.Message);
+                // Log the exception if needed
+            }
+
             return View();
         }
 
@@ -82,7 +157,7 @@ namespace ElectroMVC.Controllers
             Console.WriteLine("Giá trị của req Address: " + req.Order.Address);
             Console.WriteLine("Giá trị của req Phone: " + req.Order.Phone);
 
-            var code = new { Success = false, Code = -1 };
+            var code = new { Success = false, Code = -1 ,Url = ""};
             if (!ModelState.IsValid)
             {
                 Console.WriteLine("Lỗi");
@@ -98,7 +173,9 @@ namespace ElectroMVC.Controllers
                     Models.Order order = new Models.Order();
                     order.CustomerName = req.Order.CustomerName;
                     order.Phone = req.Order.Phone;
-                    order.Address = req.Order.Address;  
+                    order.Address = req.Order.Address;
+                    order.Email = req.Order.Email;
+                    order.Status = 1; //chưa thanh toán , 2/đã thanh toán, 3/hoàn thành 4/hủy
                     cart.Items.ForEach(x => order.orderDetails.Add(new Models.OrderDetail
                     {
                         ProductId = x.ProductId,
@@ -117,7 +194,16 @@ namespace ElectroMVC.Controllers
                     _context.SaveChanges();
                     cart.ClearCart();
                     HttpContext.Session.SetObjectAsJson("Cart", cart);
-                    return RedirectToAction("CheckOutSuccess");
+
+                    code = new { Success = true, Code = req.Order.TypePayment, Url = "" };
+
+                    //var url = "";
+                    if (req.Order.TypePayment == 2)
+                    {
+                        var url = UrlPayment(req.TypePaymentVN, order.Code);
+                        code = new { Success = true, Code = req.Order.TypePayment, Url = url };
+                    }
+                    //return RedirectToAction("CheckOutSuccess");
                 }
             }
             return Json(code);
@@ -197,7 +283,7 @@ namespace ElectroMVC.Controllers
 
                 //Console.WriteLine("Cart Item:" + cart.Items.Count);
             }
-
+                
             return Json(code);
         }
 
@@ -252,5 +338,55 @@ namespace ElectroMVC.Controllers
 
         }
 
+       
+
+
+            #region Thanh toán vnpay
+            public string UrlPayment(int TypePaymentVN, string orderCode)
+        {
+            var urlPayment = "";
+            var order = _context.Order.FirstOrDefault(x => x.Code == orderCode);
+            Console.WriteLine("Code của order " + order.Code);
+            //Get Config Info
+            string vnp_Returnurl = _configuration["VNPAY:ReturnUrl"]; //URL nhan ket qua tra ve 
+            string vnp_Url = _configuration["VNPAY:Url"]; //URL thanh toan cua VNPAY 
+            string vnp_TmnCode = _configuration["VNPAY:TmnCode"]; //Ma website
+            string vnp_HashSecret = _configuration["VNPAY:HashSecret"]; //Chuoi bi mat
+
+            //Build URL for VNPAY
+            VnPayLibrary vnpay = new VnPayLibrary();
+            var Price = (long)order.TotalAmount * 100 * 24000;
+            vnpay.AddRequestData("vnp_Version", VnPayLibrary.VERSION);
+            vnpay.AddRequestData("vnp_Command", "pay");
+            vnpay.AddRequestData("vnp_TmnCode", vnp_TmnCode);
+            vnpay.AddRequestData("vnp_Amount", Price.ToString()); //Số tiền thanh toán. Số tiền không mang các ký tự phân tách thập phân, phần nghìn, ký tự tiền tệ. Để gửi số tiền thanh toán là 100,000 VND (một trăm nghìn VNĐ) thì merchant cần nhân thêm 100 lần (khử phần thập phân), sau đó gửi sang VNPAY là: 10000000
+
+            if (TypePaymentVN == 1)
+            {
+                vnpay.AddRequestData("vnp_BankCode", "VNPAYQR");
+            }
+            else if (TypePaymentVN == 2)
+            {
+                vnpay.AddRequestData("vnp_BankCode", "VNBANK");
+            }
+            else if (TypePaymentVN == 3)
+            {
+                vnpay.AddRequestData("vnp_BankCode", "INTCARD");
+            }
+            vnpay.AddRequestData("vnp_CreateDate", order.CreatedDate.ToString("yyyyMMddHHmmss"));
+            vnpay.AddRequestData("vnp_CurrCode", "VND");
+            vnpay.AddRequestData("vnp_IpAddr", Utils.GetIpAddress());
+            vnpay.AddRequestData("vnp_Locale", "vn");
+            vnpay.AddRequestData("vnp_OrderInfo", "Thanh toan don hang:" + order.Code);
+            vnpay.AddRequestData("vnp_OrderType", "other"); //default value: other
+            vnpay.AddRequestData("vnp_ReturnUrl", vnp_Returnurl);
+            vnpay.AddRequestData("vnp_TxnRef", order.Code); // Mã tham chiếu của giao dịch tại hệ thống của merchant. Mã này là duy nhất dùng để phân biệt các đơn hàng gửi sang VNPAY. Không được trùng lặp trong ngày
+
+            urlPayment = vnpay.CreateRequestUrl(vnp_Url, vnp_HashSecret);
+            Console.WriteLine("Generated VNPAY URL: " + urlPayment);
+            Console.WriteLine(" VNPAY URL trả về: " + vnp_Returnurl);
+            return urlPayment;
+        }
+        #endregion
     }
 }

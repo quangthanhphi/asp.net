@@ -62,6 +62,7 @@
                         <th>Tên Khách hàng</th>
                         <th>Phone</th>
                         <th>Số tiền</th>
+                        <th>Phương thức thanh toán</th>
                         <th>Trạng thái</th>
                         <th>Ngày tạo</th>
                         <th></th>
@@ -79,7 +80,30 @@
                                 <td>@item.CustomerName</td>
                                 <td>@item.Phone</td>
                                 <td>$@item.TotalAmount</td>
-                                <td>@(item.TypePayment == 1 ? "Chờ thanh toán" : "Đã thanh toán")</td>
+                                <td>@(item.TypePayment == 1 ? "COD" : "Chuyển khoản")</td>
+                                <td>
+                                    @if (item.Status == 1)
+                                    {
+                                        <span>Chưa thanh toán</span>
+
+                                    }
+                                    @if (item.Status == 2)
+                                    {
+                                        <span>Đã thanh toán</span>
+
+                                    }
+                                    @if (item.Status == 3)
+                                    {
+                                        <span>Hoàn thành</span>
+
+                                    }
+                                    @if (item.Status == 4)
+                                    {
+                                        <span>Hủy</span>
+
+                                    }
+
+                                </td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 <td>
                                     @*<a href="/Order/Edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>*@
