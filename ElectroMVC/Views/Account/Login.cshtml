@@ -4,55 +4,82 @@
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
-<div class="card-body login-card-body">
-    <p class="login-box-msg">Đăng nhập để vào</p>
+<div class="container" id="container">
+    <div class="form-container sign-up">
+        <form>
+            <h1>Tạo tài khoản</h1>
+            <a href="/Account/Register">Đăng ký</a>
+        </form>
+    </div>
+    <div class="form-container sign-in">
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+        {
+            @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
-    {
-        @Html.AntiForgeryToken()
+            <h1>Đăng nhập</h1>
 
-        <div class="input-group mb-3">
-            <input type="text" asp-for="UserName" class="form-control" placeholder="Username" required />
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-user"></span>
+            @*<div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>*@
+
+            <span>sử dụng tài khoản đã đăng ký</span>
+
+            <div class="input-group mb-3">
+                <input type="email" asp-for="UserName" class="form-control" placeholder="Tài khoản" required />
+                <div class="input-group-append">
+                    <!--<div class="input-group-text">-->
+                    @*<span class="fas fa-user"></span>*@
+                    <!--</div>-->
+                </div>
+                <div class="invalid-feedback">
+                    Nhập tài khoản
                 </div>
             </div>
-            <div class="invalid-feedback">
-                Please enter your username.
-            </div>
-        </div>
 
-        <div class="input-group mb-3">
-            <input type="password" asp-for="Password" class="form-control" placeholder="Password" required />
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-lock" id="togglePassword"></span>
+            <div class="input-group mb-3">
+                <input type="password" asp-for="Password" class="form-control" placeholder="Mật khẩu" required />
+                <div class="input-group-append">
+                    <!--<div class="input-group-text">-->
+                    @*<span class="fas fa-lock" id="togglePassword"></span>*@
+                    <!--</div>-->
+                </div>
+                <div class="invalid-feedback">
+                    Nhập mật khẩu
                 </div>
             </div>
-            <div class="invalid-feedback">
-                Please enter your password.
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-8">
-                <div class="icheck-primary">
-                    <input type="checkbox" asp-for="RememberMe" />
-                    <label for="remember">
-                        Remember Me
-                    </label>
+            <div class="row">
+                @*<div class="col-8">
+                        <div class="icheck-primary">
+                            <input type="checkbox" asp-for="RememberMe" />
+                            <label for="remember">
+                                Remember Me
+                            </label>
+                        </div>
+                    </div>*@
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
                 </div>
             </div>
-            <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+        }
+    </div>
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-left">
+                <h1>Welcome Back!</h1>
+                <p>Đăng nhập với tài khoản đã đăng ký</p>
+                <button class="hidden" id="login">Đăng nhập</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Hello!</h1>
+                <p>Đăng ký tài khoản mới</p>
+                <button class="hidden" id="register">Đăng ký</button>
             </div>
         </div>
-    }
-
-    @*<p class="mb-1">
-        <a href="#">I forgot my password</a>
-    </p>*@
+    </div>
 </div>
 
 @section scripts {

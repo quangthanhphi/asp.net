@@ -24,7 +24,6 @@ namespace ElectroMVC.Models
         public string? Email { get; set; }
 
         public int Quantity { get; set; }
-
         
         public decimal TotalAmount { get; set; }
 

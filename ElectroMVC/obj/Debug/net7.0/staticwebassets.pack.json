@@ -8013,6 +8013,10 @@
       "PackagePath": "staticwebassets/assets/dist/css/alt/adminlte.plugins.min.css.map"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/css/login.css",
+      "PackagePath": "staticwebassets/assets/dist/css/login.css"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/img/AdminLTELogo.png",
       "PackagePath": "staticwebassets/assets/dist/img/AdminLTELogo.png"
     },
@@ -8169,6 +8173,10 @@
       "PackagePath": "staticwebassets/assets/dist/js/demo.js"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/login.js",
+      "PackagePath": "staticwebassets/assets/dist/js/login.js"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/dist/js/pages/dashboard.js",
       "PackagePath": "staticwebassets/assets/dist/js/pages/dashboard.js"
     },
@@ -8313,6 +8321,10 @@
       "PackagePath": "staticwebassets/assets/js/single_custom.js"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/.DS_Store",
+      "PackagePath": "staticwebassets/assets/plugins/.DS_Store"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/Isotope/isotope.pkgd.min.js",
       "PackagePath": "staticwebassets/assets/plugins/Isotope/isotope.pkgd.min.js"
     },
@@ -8339,6 +8351,30 @@
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/OwlCarousel2-2.2.1/owl.video.play.png",
       "PackagePath": "staticwebassets/assets/plugins/OwlCarousel2-2.2.1/owl.video.play.png"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/chart.js/Chart.bundle.js",
+      "PackagePath": "staticwebassets/assets/plugins/chart.js/Chart.bundle.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/chart.js/Chart.bundle.min.js",
+      "PackagePath": "staticwebassets/assets/plugins/chart.js/Chart.bundle.min.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/chart.js/Chart.css",
+      "PackagePath": "staticwebassets/assets/plugins/chart.js/Chart.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/chart.js/Chart.js",
+      "PackagePath": "staticwebassets/assets/plugins/chart.js/Chart.js"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/chart.js/Chart.min.css",
+      "PackagePath": "staticwebassets/assets/plugins/chart.js/Chart.min.css"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/chart.js/Chart.min.js",
+      "PackagePath": "staticwebassets/assets/plugins/chart.js/Chart.min.js"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/plugins/easing/easing.js",

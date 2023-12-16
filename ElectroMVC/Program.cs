@@ -90,6 +90,10 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 var app = builder.Build();
 
+
+
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -152,6 +156,12 @@ app.MapControllerRoute(
     name: "ThanhToan",
     pattern: "vnpay_return",
     defaults: new { controller = "ShoppingCart", action = "VNpayReturn" });
+
+app.MapControllerRoute(
+    name: "don-hang",
+    pattern: "don-hang",
+    defaults: new { controller = "ShoppingCart", action = "DonMua" });
+
 
 app.MapControllerRoute(
     name: "gio-hang",

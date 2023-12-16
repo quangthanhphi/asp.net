@@ -1,0 +1,201 @@
+﻿@{
+    ViewData["Title"] = "Đơn mua hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<style>
+    #show_success {
+        width: 100%;
+        height: 100%;
+    }
+
+    table {
+        margin: 0 auto; /* or margin: 0 auto 0 auto */
+    }
+</style>
+<link rel="stylesheet" type="text/css" href="~/assets/styles/bootstrap4/bootstrap.min.css">
+<link href="~/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="~/assets/styles/categories_styles.css">
+<link rel="stylesheet" type="text/css" href="~/assets/styles/categories_responsive.css">
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Đơn mua hàng</a></li>
+                </ul>
+            </div>
+            <!-- Main Content -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Theo dõi đơn hàng</h2>
+
+                    <form id="don_hang">
+                        <input id="newsletter_email" style="width:300px" type="text" placeholder="Nhập mã (code) đơn hàng cần tra cứu" />
+                        <button class="newsletter_submit_btn trans_300" id="newsletter_submit" type="submit" value="Submit">Tìm</button>
+                    </form>
+
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div id="show_success" class="col-md-12 text-center">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="show_product" class="col-md-12 text-center">
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="~/assets/js/jquery-3.2.1.min.js"></script>
+<script src="~/assets/styles/bootstrap4/popper.js"></script>
+<script src="~/assets/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="~/assets/plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="~/assets/plugins/easing/easing.js"></script>
+<script src="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script src="~/assets/js/categories_custom.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+<script>$(document).ready(function () {
+        $('#don_hang').submit(function (e) {
+            e.preventDefault();
+            var type = $('#newsletter_email').val();
+
+            $.ajax({
+                url: '/Order/GetOrderInfo',
+                method: 'GET',
+                data: { orderCode: type },
+                success: function (data) {
+                    console.log("data: " + data);
+                    // Hiển thị thông tin đơn hàng trong #show_success
+                    $('#show_success').html(data);
+                },
+                error: function () {
+                    // Xử lý lỗi nếu có
+                    console.error('Error fetching order information.');
+                }
+            });
+
+
+        });
+
+        $('#don_hang').submit(function (e) {
+            e.preventDefault();
+            var type = $('#newsletter_email').val();
+
+            $.ajax({
+                url: '/Order/GetOrderViewInfo',
+                method: 'GET',
+                data: { orderCode: type },
+                success: function (data) {
+                    console.log("data: " + data);
+                    // Hiển thị thông tin đơn hàng trong #show_product
+                    $('#show_product').html(data);
+                },
+                error: function () {
+                    // Xử lý lỗi nếu có
+                    console.error('Error fetching order information.');
+                }
+            });
+
+
+        });
+    });</script>
+<script>function confirmDelete(orderId, productId) {
+        var r = confirm("Bạn có chắc chắn muốn hủy mua sản phẩm này?");
+        if (r == true) {
+            // Nếu người dùng chấp nhận xóa, gọi action xóa trong controller
+            $.ajax({
+                url: '/Order/DeleteOrderDetail',
+                type: 'POST',
+                data: { orderId: orderId, productId: productId },
+                success: function (data) {
+                    if (data.success) {
+                        alert("Xóa thành công!");
+                        // Nếu xóa thành công, làm điều gì đó, ví dụ như cập nhật lại trang
+                        loadOrderDetailsInfoTable(orderId);
+                        loadOrderDetailsTable(orderId);
+                    } else {
+                        alert("Xóa không thành công!");
+                    }
+                },
+                error: function () {
+                    console.error('Error deleting order detail.');
+                }
+            });
+        }
+    }
+    function loadOrderDetailsTable(orderId) {
+        $.ajax({
+            url: '/Order/GetOrderViewInfoID',
+            type: 'GET',
+            data: { orderId: orderId },
+            success: function (data) {
+                $('#show_product').html(data);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+    function loadOrderDetailsInfoTable(orderId) {
+        $.ajax({
+            url: '/Order/GetOrderInfoID',
+            type: 'GET',
+            data: { orderId: orderId },
+            success: function (data) {
+                $('#show_success').html(data);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+    function confirmCancel(orderId) {
+        var r = confirm("Bạn có chắc chắn muốn hủy đơn hàng này?");
+        if (r == true) {
+            $.ajax({
+                url: '/Order/CancelOrder',
+                type: 'POST',
+                data: { orderId: orderId },
+                success: function (data) {
+                    if (data.success) {
+                        alert("Hủy đơn hàng thành công!");
+                        // Reload lại bảng thông tin đơn hàng
+                        loadOrderDetailsTable(orderId);
+                        loadOrderDetailsInfoTable(orderId);
+                    } else {
+                        alert("Hủy đơn hàng không thành công!");
+                    }
+                },
+                error: function () {
+                    console.error('Error cancelling order.');
+                }
+            });
+        }
+    }
+
+    
+
+    </script>

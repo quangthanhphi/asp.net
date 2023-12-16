@@ -84,22 +84,22 @@
                                 <td>
                                     @if (item.Status == 1)
                                     {
-                                        <span>Chưa thanh toán</span>
+                                        <h5 style="color:red;"> Chưa thanh toán</h5>
 
                                     }
                                     @if (item.Status == 2)
                                     {
-                                        <span>Đã thanh toán</span>
+                                        <h5 style="color:green;">Đã thanh toán</h5>
 
                                     }
                                     @if (item.Status == 3)
                                     {
-                                        <span>Hoàn thành</span>
+                                        <h5 style="color:blue;">Hoàn thành</h5>
 
                                     }
                                     @if (item.Status == 4)
                                     {
-                                        <span>Hủy</span>
+                                        <b style="color:red;">Hủy</b>
 
                                     }
 
@@ -166,7 +166,10 @@ new X.PagedList.Web.Common.PagedListRenderOptions
                 <div class="form-group">
                     <label>Trạng thái</label>
                     <select class="form-control" id="ddTrangThai">
+                        <option value="1">Chưa thanh toán</option>
                         <option value="2">Đã thanh toán</option>
+                        <option value="3">Hoàn thành</option>
+                        <option value="4">Hủy</option>
                     </select>
                 </div>
             </div>
@@ -190,11 +193,11 @@ new X.PagedList.Web.Common.PagedListRenderOptions
 
         $('body').on('click', '.btnLuu', function () {
             var id = $('#txtOrderId').val();
-            var tt = $('#ddTrangThai').val(); // Corrected variable name
+            var tt = $('#ddTrangThai').val(); 
             $.ajax({
                 url: 'order/UpdateTT',
                 type: "POST",
-                data: { id: id, trangthai: tt }, // Corrected syntax
+                data: { id: id, trangthai: tt }, 
                 success: function (rs) {
                     console.log(rs);
                     if (rs.success) {

@@ -50,6 +50,11 @@ namespace ElectroMVC.Controllers
             return View();
         }
 
+        public IActionResult DonMua()
+        {
+            return View();
+        }
+
         public ActionResult VNpayReturn()
         {
             try
@@ -132,6 +137,10 @@ namespace ElectroMVC.Controllers
 
         public ActionResult CheckOutSuccess()
         {
+            if (TempData["OrderCode"] != null)
+            {
+                ViewBag.OrderCode = TempData["OrderCode"].ToString();
+            }
             return ViewComponent("CheckOutSuccess");
         }
 
@@ -197,13 +206,20 @@ namespace ElectroMVC.Controllers
 
                     code = new { Success = true, Code = req.Order.TypePayment, Url = "" };
 
+                    if (req.Order.TypePayment == 1)
+                    {
+                        TempData["OrderCode"] = order.Code;
+                        //return RedirectToAction("CheckOutSuccess");
+                    }
+
                     //var url = "";
                     if (req.Order.TypePayment == 2)
                     {
                         var url = UrlPayment(req.TypePaymentVN, order.Code);
                         code = new { Success = true, Code = req.Order.TypePayment, Url = url };
                     }
-                    //return RedirectToAction("CheckOutSuccess");
+                    Console.WriteLine(code);
+                    
                 }
             }
             return Json(code);
