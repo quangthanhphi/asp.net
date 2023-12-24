@@ -10,6 +10,9 @@
         height: 100%;
     }
 
+    #orderListButton{
+        height:46px;
+    }
     table {
         margin: 0 auto; /* or margin: 0 auto 0 auto */
     }
@@ -40,11 +43,37 @@
                     <form id="don_hang">
                         <input id="newsletter_email" style="width:300px" type="text" placeholder="Nhập mã (code) đơn hàng cần tra cứu" />
                         <button class="newsletter_submit_btn trans_300" id="newsletter_submit" type="submit" value="Submit">Tìm</button>
+                        <button id="orderListButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#orderListModal">
+                            Xem Danh Sách Đơn Hàng
+                        </button>
                     </form>
 
                 </div>
             </div>
             <hr />
+            <!-- Modal -->
+            <div class="modal fade" id="orderListModal" tabindex="-1" role="dialog" aria-labelledby="orderListModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="orderListModalLabel">Danh Sách Đơn Hàng</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Đây là nơi để hiển thị danh sách đơn hàng -->
+                            <ul id="orderList" class="list-group">
+                                <!-- Các đơn hàng sẽ được thêm vào đây bằng JavaScript -->
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div id="show_success" class="col-md-12 text-center">
 
@@ -75,6 +104,12 @@
 <script src="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="~/assets/js/categories_custom.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+@*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>*@
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 <script>$(document).ready(function () {
@@ -196,6 +231,70 @@
         }
     }
 
+    function loadOrderList() {
+        $.ajax({
+            url: '/Order/GetOrderList',
+            method: 'GET',
+            dataType: 'html', // Đổi kiểu dữ liệu nhận về thành 'html'
+            success: function (data) {
+                // Hiển thị dữ liệu HTML nhận được trong modal
+                $('#orderListModal .modal-body').html(data);
+
+                // Hiển thị modal
+                $('#orderListModal').modal('show');
+            },
+            error: function () {
+                console.error('Error fetching order list.');
+            }
+        });
+    }
+
+
     
+        // Attach click event to the button to load order list
+        $('#orderListButton').on('click', function () {
+            console.log("Click modal");
+            loadOrderList();
+        });
+   
+    //Update số lượng
+    function confirmUpdate(button) {
+        // Lấy thông tin sản phẩm tương ứng với nút "Cập nhật" được click
+        var orderId = button.dataset.orderId;
+        var productId = button.dataset.productId;
+        var newQuantity = button.previousElementSibling.value;
+
+        // Gọi hàm xử lý cập nhật
+        updateOrderDetailQuantity(orderId, productId, newQuantity);
+    }
+
+    // Bắt sự kiện khi ấn vào nút "Cập nhật"
+    function updateOrderDetailQuantity(orderId, productId, newQuantity) {
+        // Kiểm tra newQuantity nếu hợp lệ (vd: là số nguyên dương)
+        if (parseInt(newQuantity) >= 0) {
+            var r = confirm("Bạn có chắc chắn muốn cập nhật số lượng sản phẩm này?");
+            if (r == true) {
+                $.ajax({
+                    url: '/Order/UpdateOrderDetailQuantity',
+                    type: 'POST',
+                    data: { orderId: orderId, productId: productId, newQuantity: newQuantity },
+                    success: function (data) {
+                        if (data.success) {
+                            alert("Cập nhật thành công!");
+                            loadOrderDetailsInfoTable(orderId);
+                            loadOrderDetailsTable(orderId);
+                        } else {
+                            alert("Cập nhật không thành công!");
+                        }
+                    },
+                    error: function () {
+                        console.error('Lỗi khi cập nhật số lượng.');
+                    }
+                });
+            }
+        } else {
+            alert("Vui lòng nhập số lượng hợp lệ.");
+        }
+    }
 
     </script>

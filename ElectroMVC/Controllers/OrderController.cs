@@ -117,8 +117,9 @@ namespace ElectroMVC.Controllers
                                 <img src='{arr[0]}' alt='Product Image' style='max-width: 100px;' /><br>
                                 {orderInfo.ProductName}<br>
                                 Giá: ${orderInfo.OrderDetail.Price}<br>
-                                Số lượng: {orderInfo.OrderDetail.Quantity}<br>
-                        <button class='btn btn-danger btn-sm' onclick='confirmDelete({orderInfo.OrderDetail.OrderId},{orderInfo.OrderDetail.ProductId})'>Hủy</button>
+                                Số lượng: <input min='0' type='number' class='quantity-input' id='quantityInput' value='{orderInfo.OrderDetail.Quantity}' onchange='showUpdateButton()' /> 
+            <button class='btn btn-warning btn-sm update-btn' data-order-id='{orderInfo.OrderDetail.OrderId}' data-product-id='{orderInfo.OrderDetail.ProductId}' onclick='confirmUpdate(this)'>Cập nhật</button>
+            <button class='btn btn-danger btn-sm' onclick='confirmDelete({orderInfo.OrderDetail.OrderId},{orderInfo.OrderDetail.ProductId})'>Hủy</button>
        
                             </div>
                         
@@ -249,8 +250,9 @@ namespace ElectroMVC.Controllers
                                 <img src='{arr[0]}' alt='Product Image' style='max-width: 100px;' /><br>
                                 {orderInfo.ProductName}<br>
                                 Giá: ${orderInfo.OrderDetail.Price}<br>
-                                Số lượng: {orderInfo.OrderDetail.Quantity}<br>
-                        <button class='btn btn-danger btn-sm' onclick='confirmDelete({orderInfo.OrderDetail.OrderId},{orderInfo.OrderDetail.ProductId})'>Hủy</button>
+                                 Số lượng: <input min='0' type='number' class='quantity-input' id='quantityInput' value='{orderInfo.OrderDetail.Quantity}' /> 
+            <button class='btn btn-warning btn-sm update-btn' data-order-id='{orderInfo.OrderDetail.OrderId}' data-product-id='{orderInfo.OrderDetail.ProductId}' onclick='confirmUpdate(this)'>Cập nhật</button>
+            <button class='btn btn-danger btn-sm' onclick='confirmDelete({orderInfo.OrderDetail.OrderId},{orderInfo.OrderDetail.ProductId})'>Hủy</button>
        
                             </div>
                         
@@ -300,6 +302,89 @@ namespace ElectroMVC.Controllers
 
             return items;
         }
+
+        //Update số lượng
+        [HttpPost]
+        public IActionResult UpdateOrderDetailQuantity(int orderId, int productId, int newQuantity)
+        {
+            try
+            {
+                var orderDetail = _context.OrderDetail.FirstOrDefault(od => od.OrderId == orderId && od.ProductId == productId);
+
+                if (orderDetail != null)
+                {
+                    // Cập nhật số lượng trong đối tượng OrderDetail
+                    var newTotal = orderDetail.Price * newQuantity - orderDetail.Price * orderDetail.Quantity;
+                    orderDetail.Quantity = newQuantity;
+
+                    // Cập nhật lại tổng tiền trong đối tượng Order
+                    var order = _context.Order.FirstOrDefault(o => o.Id == orderId);
+                    //order.TotalAmount = _context.OrderDetail.Where(od => od.OrderId == orderId);
+
+                    order.TotalAmount += newTotal;
+                    
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    _context.SaveChanges();
+
+                    return Json(new { success = true });
+                }
+                else
+                {
+                    return Json(new { success = false });
+                }
+            }
+            catch (Exception)
+            {
+                return Json(new { success = false });
+            }
+        }
+
+        //Hết update
+
+        // Hàm để lấy danh sách đơn hàng
+        [HttpGet]
+        public IActionResult GetOrderList()
+        {
+            try
+            {
+                
+                var orders = _context.Order.OrderByDescending(o => o.CreatedDate).ToList();
+
+                // Chuyển đổi danh sách đơn hàng thành HTML
+                var orderTableHtml = "<table class='table' border='1' cellspacing='0'><tr><th>Mã đơn hàng</th><th>Ngày tạo</th><th>Khách hàng</th><th>Trạng thái</th></tr>";
+
+                foreach (var order in orders)
+                {
+                    orderTableHtml += $@"
+                <tr>
+                        <td>{order.Code}</td><td>{order.CreatedDate.ToString("HH:mm dd-MM-yyyy")}</td><td>{order.CustomerName}</td> 
+                        <td>
+    {(order.Status == 1 ? "<text style='color: red;'>Chưa thanh toán</text>" :
+       order.Status == 2 ? "<text style='color: green;'>Đã thanh toán</text>" :
+       order.Status == 3 ? "<text style='color: blue;'>Hoàn thành</text>" :
+                               "<b style='color: red;'>Hủy</b>")}
+    
+
+                        </ td >
+
+                </tr>";
+                }
+
+                orderTableHtml += "</table>";
+
+                // Trả về dữ liệu HTML với kiểu text/html
+                return Content(orderTableHtml, "text/html");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in GetOrderList: {ex.Message}");
+                // Xử lý lỗi và trả về response lỗi
+                return BadRequest(new { error = ex.Message });
+            }
+        }
+
+
 
         //XÓa order detail
         [HttpPost]
