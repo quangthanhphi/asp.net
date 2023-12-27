@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
+using X.PagedList.Mvc.Core;
 using ElectroMVC.Data;
 using ElectroMVC.Models;
 
@@ -20,10 +22,19 @@ namespace ElectroMVC.Controllers
         }
 
         // GET: Product
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-            var applicationDbContext = _context.Product.Include(p => p.ProductCategory);
-            return View(await applicationDbContext.ToListAsync());
+            var products = _context.Product.Include(p => p.ProductCategory);
+            if (page == null)
+            {
+                page = 1;
+            }
+            var pageNumber = page ?? 1;
+            var pageSize = 5;
+            var paginatedProducts = await products.ToPagedListAsync(pageNumber, pageSize);
+
+            return View(paginatedProducts);
+            //return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Product/Details/5

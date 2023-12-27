@@ -1,6 +1,10 @@
-@model IEnumerable<ElectroMVC.Models.Product>
+@*@model IEnumerable<ElectroMVC.Models.Product>*@
+@model X.PagedList.IPagedList<ElectroMVC.Models.Product>
 @using Microsoft.AspNetCore.Html
-
+@using X.PagedList.Mvc.Common
+@using X.PagedList.Web.Common
+@using X.PagedList
+@using X.PagedList.Mvc.Core;
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -68,7 +72,7 @@
                         <th>Hình ảnh</th>
                         <th>Tên sản phẩm</th>
                         <th>Danh mục</th>
-                        <th>Số lượng</th>
+                        @*<th>Số lượng</th>*@
                         <th>Giá</th>
                         <th>Ngày tạo</th>
                         <th></th>
@@ -88,7 +92,7 @@
                                     <td> @AnhDaiDien(item?.Image, "100px")</td>
                                     <td>@item.Title</td>
                                     <td>@item.ProductCategory?.Title</td>
-                                    <td>@item.Quantity</td>
+                                    @*<td>@item.Quantity</td>*@
                                     <td>@item.Price</td>
                                     <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                     <td>
@@ -111,6 +115,19 @@
 
                 </tbody>
             </table>
+            <br />
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6">
+                    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }),
+new X.PagedList.Web.Common.PagedListRenderOptions
+{
+         LiElementClasses = new string[] { "page-item" },
+         PageClasses = new string[] { "page-link" }
+})
+                </div>
+            </div>
+
         </div>
         <!-- /.card-body -->
         <div class="card-footer">

@@ -63,19 +63,16 @@
                                         </ul>
                                     </li>
                                     <li class="account">
-
-                                        @if (Context.User.Identity.IsAuthenticated)
-                                        {
                                             <a href="/Account/Login">
                                                 Welcome
                                                 <i class="fa fa-angle-down"></i>
                                             </a>
                                             <ul class="account_selection">
                                                 @*<li><a href="/"><i class="fa fa-sign-in" aria-hidden="true"></i>Welcome @Context.User.Identity.Name</a></li>*@
-                                                <li><a href="/Account/Login"><i class="fa fa-user-plus" aria-hidden="true"></i>Logout</a></li>
+                                                <li><a href="/Account/Login"><i class="fa fa-user-plus" aria-hidden="true"></i>Login</a></li>
                                             </ul>
-                                        }
-                                        else
+                                        
+                                        @*else
                                         {
                                             <a href="/Account/Login">
                                                 Tài khoản
@@ -85,7 +82,7 @@
                                                 <li><a href="/Account/Login"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
                                                 <li><a href="/Account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
                                             </ul>
-                                        }
+                                        }*@
                                     </li>
                                 </ul>
                             </div>

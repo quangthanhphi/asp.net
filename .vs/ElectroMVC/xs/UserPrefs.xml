@@ -1,138 +1,116 @@
 ﻿<Properties StartupConfiguration="{735647EA-29D2-48AB-8C33-EE9444E978BE}|https">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ElectroMVC/Views/Home/Index1.cshtml">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ElectroMVC/Views/Order/Index.cshtml">
     <Files>
-      <File FileName="ElectroMVC/Views/Category/Index.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/News/Index.cshtml" Line="1" Column="43" />
-      <File FileName="ElectroMVC/Views/Shared/_SideBarPartial.cshtml" Line="15" Column="37" />
-      <File FileName="ElectroMVC/Views/News/Create.cshtml" Line="1" Column="30" />
-      <File FileName="ElectroMVC/Views/News/Details.cshtml" Line="35" Column="23" />
-      <File FileName="ElectroMVC/Views/News/Delete.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/Admin/Index.cshtml" Line="29" Column="18" />
-      <File FileName="ElectroMVC/Models/News.cs" Line="8" Column="18" />
-      <File FileName="ElectroMVC/Controllers/NewsController.cs" Line="47" Column="29" />
+      <File FileName="ElectroMVC/Views/Category/Index.cshtml" />
+      <File FileName="ElectroMVC/Views/News/Index.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/_SideBarPartial.cshtml" />
+      <File FileName="ElectroMVC/Views/News/Create.cshtml" />
+      <File FileName="ElectroMVC/Views/News/Details.cshtml" />
+      <File FileName="ElectroMVC/Views/News/Delete.cshtml" />
+      <File FileName="ElectroMVC/Views/Admin/Index.cshtml" />
+      <File FileName="ElectroMVC/Models/News.cs" />
+      <File FileName="ElectroMVC/Controllers/NewsController.cs" />
       <File FileName="ElectroMVC/Models/Category.cs" />
-      <File FileName="ElectroMVC/Views/Shared/_Layout.cshtml" Line="75" Column="26" />
-      <File FileName="ElectroMVC/Views/Category/Create.cshtml" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Views/Shared/_Layout.cshtml" />
+      <File FileName="ElectroMVC/Views/Category/Create.cshtml" />
       <File FileName="ElectroMVC/wwwroot/ckeditor/config.js" />
       <File FileName="ElectroMVC/wwwroot/ckeditor/ckeditor.js" />
-      <File FileName="ElectroMVC/Program.cs" Line="164" Column="33" />
+      <File FileName="ElectroMVC/Program.cs" />
       <File FileName="ElectroMVC/Views/Shared/Components/CheckOutSuccess/Default.cshtml" />
       <File FileName="ElectroMVC/ViewComponents/CheckOutSuccessViewComponent.cs" />
-      <File FileName="ElectroMVC/Views/Shared/Components/CheckOut/Default.cshtml" Line="4" Column="25" />
+      <File FileName="ElectroMVC/Views/Shared/Components/CheckOut/Default.cshtml" />
       <File FileName="ElectroMVC/Views/Shared/Components/CheckOutContent/Default.cshtml" />
-      <File FileName="ElectroMVC/Controllers/ShoppingCartController.cs" Line="55" Column="46" />
+      <File FileName="ElectroMVC/Controllers/ShoppingCartController.cs" />
       <File FileName="ElectroMVC/Controllers/PostsController.cs" />
-      <File FileName="ElectroMVC/Controllers/OrderController.cs" Line="64" Column="60" />
-      <File FileName="ElectroMVC/Views/Order/Index.cshtml" Line="146" Column="30" />
-      <File FileName="ElectroMVC/Views/Product/Index.cshtml" Line="6" Column="29" />
-      <File FileName="ElectroMVC/Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Controllers/OrderController.cs" Line="254" Column="33" />
+      <File FileName="ElectroMVC/Views/Order/Index.cshtml" Line="144" Column="29" />
+      <File FileName="ElectroMVC/Views/Product/Index.cshtml" />
+      <File FileName="ElectroMVC/Views/_ViewImports.cshtml" />
       <File FileName="ElectroMVC/Views/Order/Details.cshtml" />
-      <File FileName="ElectroMVC/Views/Shared/_AdminLayout.cshtml" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Views/Shared/_AdminLayout.cshtml" />
       <File FileName="ElectroMVC/Views/Order/Create.cshtml" />
       <File FileName="ElectroMVC/Views/Order/Delete.cshtml" />
       <File FileName="ElectroMVC/Views/Order/Edit.cshtml" />
-      <File FileName="ElectroMVC/Views/Product/Details.cshtml" Line="22" Column="65" />
-      <File FileName="ElectroMVC/Models/OrderDetail.cs" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Views/Product/Details.cshtml" />
+      <File FileName="ElectroMVC/Models/OrderDetail.cs" />
       <File FileName="ElectroMVC/ViewComponents/CheckOutContentViewComponent.cs" />
-      <File FileName="ElectroMVC/ViewComponents/ProductsViewComponent.cs" Line="22" Column="34" />
+      <File FileName="ElectroMVC/ViewComponents/ProductsViewComponent.cs" />
       <File FileName="ElectroMVC/ViewComponents/OrderPartialViewComponent.cs" />
       <File FileName="ElectroMVC/Views/Shared/Components/OrderPartial/Default.cshtml" />
       <File FileName="ElectroMVC/Views/Product/Create.cshtml" />
       <File FileName="ElectroMVC/Views/Product/Edit.cshtml" />
       <File FileName="ElectroMVC/ViewComponents/Partial_Item_CartViewComponent.cs" />
-      <File FileName="ElectroMVC/ViewComponents/ProductCateViewComponent.cs" Line="38" Column="39" />
-      <File FileName="ElectroMVC/Models/Order.cs" Line="21" Column="1" />
+      <File FileName="ElectroMVC/ViewComponents/ProductCateViewComponent.cs" />
+      <File FileName="ElectroMVC/Models/Order.cs" />
       <File FileName="ElectroMVC/Models/Product.cs" />
-      <File FileName="ElectroMVC/Views/Shared/Components/ProductCate/Default.cshtml" Line="1" Column="1" />
+      <File FileName="ElectroMVC/Views/Shared/Components/ProductCate/Default.cshtml" />
       <File FileName="ElectroMVC/Models/OrderView.cs" />
       <File FileName="ElectroMVC/wwwroot/js/jsShopping.js" />
-      <File FileName="ElectroMVC/Controllers/AdminController.cs" Line="13" Column="23" />
-      <File FileName="ElectroMVC/Controllers/AdvController.cs" Line="8" Column="23" />
+      <File FileName="ElectroMVC/Controllers/AdminController.cs" />
+      <File FileName="ElectroMVC/Controllers/AdvController.cs" />
       <File FileName="ElectroMVC/Views/ShoppingCart/Index.cshtml" />
       <File FileName="ElectroMVC/Views/Shared/Components/Partial_Item_Cart/Default.cshtml" />
-      <File FileName="ElectroMVC/Controllers/HomeController.cs" Line="26" Column="33" />
-      <File FileName="ElectroMVC/Controllers/SubscribeController.cs" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Controllers/RoleController.cs" Line="63" Column="52" />
-      <File FileName="ElectroMVC/Controllers/ProductController.cs" Line="42" Column="55" />
-      <File FileName="ElectroMVC/Views/Role/Index.cshtml" Line="5" Column="51" />
-      <File FileName="ElectroMVC/Views/Home/Index.cshtml" Line="14" Column="20" />
-      <File FileName="ElectroMVC/Views/Shared/_LoginPartial.cshtml" Line="73" Column="76" />
-      <File FileName="ElectroMVC/Views/Role/Create.cshtml" Line="13" Column="14" />
-      <File FileName="ElectroMVC/Data/ApplicationDbContext.cs" Line="11" Column="18" />
-      <File FileName="ElectroMVC/Controllers/AccountController.cs" Line="91" Column="27" />
-      <File FileName="ElectroMVC/Models/ProductView.cs" Line="3" Column="25" />
-      <File FileName="ElectroMVC/Models/AccountViewModel.cs" Line="51" Column="18" />
-      <File FileName="ElectroMVC/Views/Account/Index.cshtml" Line="19" Column="10" />
-      <File FileName="ElectroMVC/Models/User.cs" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/Account/Create.cshtml" Line="48" Column="39" />
+      <File FileName="ElectroMVC/Controllers/HomeController.cs" />
+      <File FileName="ElectroMVC/Controllers/SubscribeController.cs" />
+      <File FileName="ElectroMVC/Controllers/RoleController.cs" />
+      <File FileName="ElectroMVC/Controllers/ProductController.cs" />
+      <File FileName="ElectroMVC/Views/Role/Index.cshtml" />
+      <File FileName="ElectroMVC/Views/Home/Index.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/_LoginPartial.cshtml" />
+      <File FileName="ElectroMVC/Views/Role/Create.cshtml" />
+      <File FileName="ElectroMVC/Data/ApplicationDbContext.cs" />
+      <File FileName="ElectroMVC/Controllers/AccountController.cs" />
+      <File FileName="ElectroMVC/Models/ProductView.cs" />
+      <File FileName="ElectroMVC/Views/Account/Index.cshtml" />
+      <File FileName="ElectroMVC/Models/User.cs" />
+      <File FileName="ElectroMVC/Views/Account/Create.cshtml" />
       <File FileName="ElectroMVC/app.db" />
-      <File FileName="ElectroMVC/Views/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/Shared/Error.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Models/IdentityConfig.cs" Line="9" Column="36" />
-      <File FileName="ElectroMVC/Models/Filter.cs" Line="6" Column="1" />
-      <File FileName="ElectroMVC/Views/Shared/Components/Menu/Default.cshtml" Line="8" Column="23" />
-      <File FileName="ElectroMVC/Views/Shared/Components/MenuProductCategory/Default.cshtml" Line="14" Column="60" />
-      <File FileName="ElectroMVC/Views/Shared/Components/MenuBestSeller/Default.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/Shared/Components/MenuArrivalPartial/Default.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/Shared/Components/MenuArrival/Default.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/Shared/Components/MenuLeft/Default.cshtml" Line="8" Column="37" />
-      <File FileName="ElectroMVC/Views/Account/Login.cshtml" Line="8" Column="46" />
-      <File FileName="ElectroMVC/Views/Shared/_LayoutLogin.cshtml" Line="20" Column="23" />
-      <File FileName="ElectroMVC/Areas/Identity/Pages/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/appsettings.json" Line="18" Column="5" />
-      <File FileName="ElectroMVC/Controllers/MenuController.cs" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Controllers/ContactController.cs" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/AdminLogin/Index.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Controllers/AdminLoginController.cs" Line="13" Column="28" />
-      <File FileName="ElectroMVC/Views/Account/Register.cshtml" Line="47" Column="60" />
-      <File FileName="ElectroMVC/Views/Home/Index1.cshtml" Line="74" Column="56" />
-      <File FileName="ElectroMVC/Views/Home/AllProducts.cshtml" Line="158" Column="30" />
-      <File FileName="ElectroMVC/Views/Shared/Components/Products/Default.cshtml" Line="35" Column="65" />
-      <File FileName="ElectroMVC/Views/News/Info.cshtml" Line="14" Column="9" />
-      <File FileName="ElectroMVC/Views/News/Edit.cshtml" Line="1" Column="1" />
-      <File FileName="ElectroMVC/Views/Home/Contact.cshtml" Line="121" Column="23" />
-      <File FileName="ElectroMVC/ViewComponents/NewsViewComponent.cs" Line="24" Column="9" />
-      <File FileName="ElectroMVC/Views/Shared/Components/News/Default.cshtml" Line="9" Column="82" />
+      <File FileName="ElectroMVC/Views/_ViewStart.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/Error.cshtml" />
+      <File FileName="ElectroMVC/Models/IdentityConfig.cs" />
+      <File FileName="ElectroMVC/Models/Filter.cs" />
+      <File FileName="ElectroMVC/Views/Shared/Components/Menu/Default.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/Components/MenuProductCategory/Default.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/Components/MenuBestSeller/Default.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/Components/MenuArrivalPartial/Default.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/Components/MenuArrival/Default.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/Components/MenuLeft/Default.cshtml" />
+      <File FileName="ElectroMVC/Views/Account/Login.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/_LayoutLogin.cshtml" />
+      <File FileName="ElectroMVC/Areas/Identity/Pages/_ViewStart.cshtml" />
+      <File FileName="ElectroMVC/appsettings.json" />
+      <File FileName="ElectroMVC/Controllers/MenuController.cs" />
+      <File FileName="ElectroMVC/Controllers/ContactController.cs" />
+      <File FileName="ElectroMVC/Views/AdminLogin/Index.cshtml" />
+      <File FileName="ElectroMVC/Controllers/AdminLoginController.cs" />
+      <File FileName="ElectroMVC/Views/Account/Register.cshtml" />
+      <File FileName="ElectroMVC/Views/Home/Index1.cshtml" Line="76" Column="49" />
+      <File FileName="ElectroMVC/Views/Home/AllProducts.cshtml" />
+      <File FileName="ElectroMVC/Views/Shared/Components/Products/Default.cshtml" />
+      <File FileName="ElectroMVC/Views/News/Info.cshtml" />
+      <File FileName="ElectroMVC/Views/News/Edit.cshtml" />
+      <File FileName="ElectroMVC/Views/Home/Contact.cshtml" />
+      <File FileName="ElectroMVC/ViewComponents/NewsViewComponent.cs" />
+      <File FileName="ElectroMVC/Views/Shared/Components/News/Default.cshtml" />
+      <File FileName="ElectroMVC/Views/ShoppingCart/DonMua.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ElectroMVC">
             <Node name="ElectroMVC">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="ViewComponents" expanded="True" />
-              <Node name="Views">
-                <Node name="Account" expanded="True" />
-                <Node name="Admin" expanded="True" />
-                <Node name="AdminLogin" expanded="True" />
+              <Node name="Views" expanded="True">
                 <Node name="Category" expanded="True" />
-                <Node name="Home">
-                  <Node name="Index1.cshtml" selected="True" />
-                </Node>
+                <Node name="Home" expanded="True" />
                 <Node name="News" expanded="True" />
-                <Node name="Order" expanded="True" />
-                <Node name="Role" expanded="True" />
-                <Node name="Shared">
-                  <Node name="Components">
-                    <Node name="CheckOut" expanded="True" />
-                    <Node name="CheckOutContent" expanded="True" />
-                    <Node name="CheckOutSuccess" expanded="True" />
-                    <Node name="MenuArrival" expanded="True" />
-                    <Node name="MenuArrivalPartial" expanded="True" />
-                    <Node name="MenuBestSeller" expanded="True" />
-                    <Node name="MenuProductCategory" expanded="True" />
-                    <Node name="News" expanded="True" />
-                    <Node name="OrderPartial" expanded="True" />
-                    <Node name="Partial_Item_Cart" expanded="True" />
-                    <Node name="ProductCate" expanded="True" />
-                  </Node>
+                <Node name="Order" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
                 </Node>
+                <Node name="Role" expanded="True" />
                 <Node name="ShoppingCart" expanded="True" />
-              </Node>
-              <Node name="wwwroot">
-                <Node name="js" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -145,8 +123,5 @@
       <Breakpoint file="/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/Models/Contact.cs" relfile="ElectroMVC/Models/Contact.cs" line="15" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ElectroMVC PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

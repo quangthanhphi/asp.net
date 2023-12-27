@@ -1,28 +1,36 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Đơn mua hàng";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
 <style>
+    body a:hover {
+        color: inherit; /* or your custom color */
+        text-decoration: none;
+    }
     #show_success {
         width: 100%;
         height: 100%;
     }
 
-    #orderListButton{
-        height:46px;
+    #orderListButton {
+        height: 46px;
     }
+
     table {
         margin: 0 auto; /* or margin: 0 auto 0 auto */
     }
 </style>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="~/assets/styles/bootstrap4/bootstrap.min.css">
 <link href="~/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="~/assets/plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="~/assets/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="~/assets/styles/categories_styles.css">
 <link rel="stylesheet" type="text/css" href="~/assets/styles/categories_responsive.css">
 <div class="container product_section_container">
@@ -73,6 +81,8 @@
                     </div>
                 </div>
             </div>
+            <hr />
+            
 
             <div class="row">
                 <div id="show_success" class="col-md-12 text-center">
@@ -104,12 +114,7 @@
 <script src="~/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="~/assets/js/categories_custom.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-@*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>*@
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 <script>$(document).ready(function () {
@@ -122,7 +127,7 @@
                 method: 'GET',
                 data: { orderCode: type },
                 success: function (data) {
-                    console.log("data: " + data);
+                    //console.log("data: " + data);
                     // Hiển thị thông tin đơn hàng trong #show_success
                     $('#show_success').html(data);
                 },
@@ -144,7 +149,7 @@
                 method: 'GET',
                 data: { orderCode: type },
                 success: function (data) {
-                    console.log("data: " + data);
+                    //console.log("data: " + data);
                     // Hiển thị thông tin đơn hàng trong #show_product
                     $('#show_product').html(data);
                 },
@@ -167,12 +172,12 @@
                 data: { orderId: orderId, productId: productId },
                 success: function (data) {
                     if (data.success) {
-                        alert("Xóa thành công!");
+                        alert("Hủy mua sản phẩm thành công!");
                         // Nếu xóa thành công, làm điều gì đó, ví dụ như cập nhật lại trang
                         loadOrderDetailsInfoTable(orderId);
                         loadOrderDetailsTable(orderId);
                     } else {
-                        alert("Xóa không thành công!");
+                        alert("Hủy mua sản phẩm không thành công!");
                     }
                 },
                 error: function () {
@@ -250,13 +255,14 @@
     }
 
 
-    
-        // Attach click event to the button to load order list
-        $('#orderListButton').on('click', function () {
-            console.log("Click modal");
-            loadOrderList();
-        });
-   
+
+    // Attach click event to the button to load order list
+    $('#orderListButton').on('click', function () {
+        console.log("Click modal");
+        loadOrderList();
+    });
+
+
     //Update số lượng
     function confirmUpdate(button) {
         // Lấy thông tin sản phẩm tương ứng với nút "Cập nhật" được click
@@ -296,5 +302,27 @@
             alert("Vui lòng nhập số lượng hợp lệ.");
         }
     }
+    var selectedProductId;
+    function showProductChangeModal(orderId, productId) {
+        selectedOrderId = orderId; // Save the selected order ID
+        selectedProductId = productId;
 
-    </script>
+
+        // Call an action in the controller to get the product list
+        $.ajax({
+            url: '/Order/GetProductList',
+            method: 'GET',
+            success: function (data) {
+                // Display the product list in the modal body
+                $('#productChangeModalBody').html(data);
+                console.log("sản phẩm bị đổi:" + selectedProductId);
+                // Show the product change modal
+                $('#productChangeModal').modal('show');
+            },
+            error: function () {
+                console.error('Error fetching product list.');
+            }
+        });
+    }
+
+   </script>

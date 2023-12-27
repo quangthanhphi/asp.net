@@ -8189,6 +8189,10 @@
       "PackagePath": "staticwebassets/assets/dist/js/pages/dashboard3.js"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/.DS_Store",
+      "PackagePath": "staticwebassets/assets/images/.DS_Store"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/banner_1.jpg",
       "PackagePath": "staticwebassets/assets/images/banner_1.jpg"
     },
@@ -8227,6 +8231,10 @@
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/desc_3.jpg",
       "PackagePath": "staticwebassets/assets/images/desc_3.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/hero-1.jpg",
+      "PackagePath": "staticwebassets/assets/images/hero-1.jpg"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/assets/images/map_marker.png",
@@ -30805,28 +30813,16 @@
       "PackagePath": "staticwebassets/images/0fa4f7fa-a97d-4117-ac36-679415cda0c7_MW-20220811-TNF-CTSS-0193-1200.jpg"
     },
     {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/16075563-a93d-40d8-9e1e-138fb4e11793_single_2_thumb.jpg",
-      "PackagePath": "staticwebassets/images/16075563-a93d-40d8-9e1e-138fb4e11793_single_2_thumb.jpg"
-    },
-    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/22dcd47f-2ad6-4a8e-9fc0-a5c4eb7dfdb8_Emily(1).jpg",
       "PackagePath": "staticwebassets/images/22dcd47f-2ad6-4a8e-9fc0-a5c4eb7dfdb8_Emily(1).jpg"
     },
     {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/37cd04fb-2b92-4c49-97c4-c4b59a4e4fb2_product_2.png",
-      "PackagePath": "staticwebassets/images/37cd04fb-2b92-4c49-97c4-c4b59a4e4fb2_product_2.png"
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/2704f17d-6f80-4f8f-bb12-487135c8f1fc_product1-2.webp",
+      "PackagePath": "staticwebassets/images/2704f17d-6f80-4f8f-bb12-487135c8f1fc_product1-2.webp"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/37de8d2e-fda0-4107-a0bd-187b6492c976_banner_2.jpg",
       "PackagePath": "staticwebassets/images/37de8d2e-fda0-4107-a0bd-187b6492c976_banner_2.jpg"
-    },
-    {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/4512866b-9973-4402-b8c3-8f993cfeba83_single_2.jpg",
-      "PackagePath": "staticwebassets/images/4512866b-9973-4402-b8c3-8f993cfeba83_single_2.jpg"
-    },
-    {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/4fe96081-a68e-4a2b-ad94-0ba74a21c44d_product_1.png",
-      "PackagePath": "staticwebassets/images/4fe96081-a68e-4a2b-ad94-0ba74a21c44d_product_1.png"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/600156b7-7681-47df-b29b-ccf8f65588b5_TheoLansbury_AlpineOdyssey_1.jpg",
@@ -30837,16 +30833,76 @@
       "PackagePath": "staticwebassets/images/68914457-3498-482b-a6a4-7995ed0df64e_banner_1.jpg"
     },
     {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/689ceffd-2fb8-41f2-b645-bba8563ff210_product5-1.jpg",
+      "PackagePath": "staticwebassets/images/689ceffd-2fb8-41f2-b645-bba8563ff210_product5-1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/76e374b8-bacc-446c-b341-a533cc68a53f_product4-1.jpg",
+      "PackagePath": "staticwebassets/images/76e374b8-bacc-446c-b341-a533cc68a53f_product4-1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/8043e9d1-20cd-408e-8b88-66b5b0c815c2_product8-2.jpg",
+      "PackagePath": "staticwebassets/images/8043e9d1-20cd-408e-8b88-66b5b0c815c2_product8-2.jpg"
+    },
+    {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/84ceceb8-43d6-4c09-a6b6-e3fe28a08f82_banner_3.jpg",
       "PackagePath": "staticwebassets/images/84ceceb8-43d6-4c09-a6b6-e3fe28a08f82_banner_3.jpg"
     },
     {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/9e834eac-d048-47ed-9723-de233d2eb4d1_single_1.jpg",
-      "PackagePath": "staticwebassets/images/9e834eac-d048-47ed-9723-de233d2eb4d1_single_1.jpg"
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/9871b0bd-b3f0-40a2-b5b5-63ae3a8b6a2e_product7-1.jpg",
+      "PackagePath": "staticwebassets/images/9871b0bd-b3f0-40a2-b5b5-63ae3a8b6a2e_product7-1.jpg"
     },
     {
-      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/c13f55af-e990-470d-b1a3-1687b91f6de4_product_4.png",
-      "PackagePath": "staticwebassets/images/c13f55af-e990-470d-b1a3-1687b91f6de4_product_4.png"
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/a55c4550-5799-4f12-95a5-eafafea6cbab_product3-1.jpg",
+      "PackagePath": "staticwebassets/images/a55c4550-5799-4f12-95a5-eafafea6cbab_product3-1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/a7d1ef26-2e30-42e6-b068-18f80896430e_product2-1.jpg",
+      "PackagePath": "staticwebassets/images/a7d1ef26-2e30-42e6-b068-18f80896430e_product2-1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/a84d4981-f2d4-4aaf-be6a-ba10b540beb6_product5-2.jpg",
+      "PackagePath": "staticwebassets/images/a84d4981-f2d4-4aaf-be6a-ba10b540beb6_product5-2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/a94d9f40-4361-4704-8299-892fc5af6b21_product1-1.webp",
+      "PackagePath": "staticwebassets/images/a94d9f40-4361-4704-8299-892fc5af6b21_product1-1.webp"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/be00a6bf-7ed3-4c33-9193-69a2b6e533f3_product8-1.jpg",
+      "PackagePath": "staticwebassets/images/be00a6bf-7ed3-4c33-9193-69a2b6e533f3_product8-1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/bee682b7-f45b-4654-b5d2-b572d83059a5_product6-2.jpg",
+      "PackagePath": "staticwebassets/images/bee682b7-f45b-4654-b5d2-b572d83059a5_product6-2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/c0705ed7-dfbd-445e-ad03-14897cdc6203_product6-1.jpg",
+      "PackagePath": "staticwebassets/images/c0705ed7-dfbd-445e-ad03-14897cdc6203_product6-1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/ce7f83a8-c3ad-496e-b24b-452e59b6053c_product9-2.jpg",
+      "PackagePath": "staticwebassets/images/ce7f83a8-c3ad-496e-b24b-452e59b6053c_product9-2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/cfab7464-6a6f-4be8-91d6-8c68c0f46a6b_product7-2.jpg",
+      "PackagePath": "staticwebassets/images/cfab7464-6a6f-4be8-91d6-8c68c0f46a6b_product7-2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/deda9d9d-4207-472e-b10d-eefdf0390d38_product3-2.jpg",
+      "PackagePath": "staticwebassets/images/deda9d9d-4207-472e-b10d-eefdf0390d38_product3-2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/e115dea1-4e39-47b7-8bd9-77415f959980_product9-1.jpg",
+      "PackagePath": "staticwebassets/images/e115dea1-4e39-47b7-8bd9-77415f959980_product9-1.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/f29ea5de-7e42-4061-af7c-873f2ce733bd_product2-2.jpg",
+      "PackagePath": "staticwebassets/images/f29ea5de-7e42-4061-af7c-873f2ce733bd_product2-2.jpg"
+    },
+    {
+      "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/images/f83d282e-c717-4d91-b450-c69ac77a084e_product4-2.jpg",
+      "PackagePath": "staticwebassets/images/f83d282e-c717-4d91-b450-c69ac77a084e_product4-2.jpg"
     },
     {
       "Id": "/Users/phiquangthanh/Desktop/ElectroMVC/ElectroMVC/wwwroot/js/jsShopping.js",

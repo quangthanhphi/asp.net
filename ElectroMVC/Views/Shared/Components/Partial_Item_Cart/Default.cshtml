@@ -26,7 +26,7 @@
                 </td>
                 <td>@item.CategoryName</td>
                 <td>$@item.Price</td>
-                <td><input class="form-control soluong" data-id="@item.ProductId" style="color:#000;" id="Quantity_@item.ProductId" type="number" value="@item.Quantity" /></td>
+                <td><input min="1" class="form-control soluong" data-id="@item.ProductId" style="color:#000;" id="Quantity_@item.ProductId" type="number" value="@item.Quantity" /></td>
                 <td class="text-danger"><span>$@item.TotalPrice</span></td>
                 <td>
                     <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Xóa</a>

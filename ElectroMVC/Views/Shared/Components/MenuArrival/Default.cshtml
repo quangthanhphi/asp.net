@@ -17,12 +17,13 @@
                 <div class="new_arrivals_sorting">
                     <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
                         <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-                        @foreach (var item in Model)
-                        {
-                            @await Component.InvokeAsync("MenuArrivalPartial",item.ProductCategoryId)
+                        @*@foreach (var item in Model)
+        {*@
+                        @await Component.InvokeAsync("MenuArrivalPartial")
 
-                        }
-                         </ul>
+
+                        @*}*@
+                    </ul>
                 </div>
             </div>
         </div>
@@ -41,7 +42,7 @@
                                             string[] imageUrls = item.Image?.Split(';');
                                             if (imageUrls != null && imageUrls.Length > 0)
                                             {
-                                                <img src="@imageUrls[0]" alt="">
+                                                <img style="height:221px;" src="@imageUrls[0]" alt="">
                                             }
                                         }
                                     </div>
@@ -65,7 +66,7 @@
                                             string[] imageUrls = item.Image?.Split(';');
                                             if (imageUrls != null && imageUrls.Length > 0)
                                             {
-                                                <img src="@imageUrls[0]" alt="">
+                                                <img style="height:221px;" src="@imageUrls[0]" alt="">
                                             }
                                         }
                                     </div>

@@ -1,9 +1,10 @@
 ﻿<!-- Default.cshtml -->
-@model List<ProductViewModel>
+@*@model List<ProductViewModel>*@
+@model List<ProductCategory>
 
-@foreach (var productViewModel in Model)
+@foreach (var item in Model)
 {
-    <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".@productViewModel.Product.ProductCategoryId">
-        @productViewModel.ProductCategoryName
+    <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".@item.Id">
+        @item.Title
     </li>
 }

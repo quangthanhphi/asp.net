@@ -31,6 +31,30 @@ namespace ElectroMVC.Controllers
             }
             var pageNumber = page ?? 1;
             var pageSize = 5;
+
+            DateTime currentDate = DateTime.Now;
+            decimal totalRevenueThisMonth = _context.Order
+                .Where(o => o.CreatedDate.Month == currentDate.Month && o.CreatedDate.Year == currentDate.Year)
+                .Sum(o => o.TotalAmount);
+
+            ViewBag.TotalRevenueThisMonth = totalRevenueThisMonth;
+
+            decimal totalRevenueThisYear = _context.Order
+                .Where(o => o.CreatedDate.Year == currentDate.Year)
+                .Sum(o => o.TotalAmount);
+
+            ViewBag.TotalRevenueThisYear = totalRevenueThisYear;
+
+            int totalOrdersThisMonth = _context.Order
+        .Count(o => o.CreatedDate.Year == currentDate.Year && o.CreatedDate.Month == currentDate.Month);
+
+            int totalOrdersThisYear = _context.Order
+                .Count(o => o.CreatedDate.Year == currentDate.Year);
+
+            ViewBag.TotalOrdersThisMonth = totalOrdersThisMonth;
+            ViewBag.TotalOrdersThisYear = totalOrdersThisYear;
+
+
             return View(item.ToPagedList(pageNumber, pageSize));
             //return _context.Order != null ? 
             //            View(await _context.Order.ToListAsync()) :
@@ -62,7 +86,7 @@ namespace ElectroMVC.Controllers
             <tr>
                 <th>Thông tin đơn hàng</th>
                 <td>
-                    Thời gian mua hàng: {orderInfo.CreatedDate} <br>
+                    Thời gian mua hàng: {orderInfo.CreatedDate.ToString("HH:mm dd/MM/yyyy")} <br>
                     Tổng tiền: ${orderInfo.TotalAmount} <br>
                 </td>
             </tr>
@@ -107,27 +131,35 @@ namespace ElectroMVC.Controllers
             var i = 1;
             foreach (var orderInfo in orderInfoList)
             {
-                if(orderInfo.Order.Status != 4)
+                if (orderInfo.Order.Status != 4)
                 {
                     string[] arr = orderInfo.Product.Image.Split(';');
                     htmlResult += $@"
-                    <div style='display: inline-block; margin: 10px;'>
-                        <h5>Thông tin sản phẩm {i}</h5>
-                          <div>
-                                <img src='{arr[0]}' alt='Product Image' style='max-width: 100px;' /><br>
-                                {orderInfo.ProductName}<br>
-                                Giá: ${orderInfo.OrderDetail.Price}<br>
-                                Số lượng: <input min='0' type='number' class='quantity-input' id='quantityInput' value='{orderInfo.OrderDetail.Quantity}' onchange='showUpdateButton()' /> 
-            <button class='btn btn-warning btn-sm update-btn' data-order-id='{orderInfo.OrderDetail.OrderId}' data-product-id='{orderInfo.OrderDetail.ProductId}' onclick='confirmUpdate(this)'>Cập nhật</button>
-            <button class='btn btn-danger btn-sm' onclick='confirmDelete({orderInfo.OrderDetail.OrderId},{orderInfo.OrderDetail.ProductId})'>Hủy</button>
-       
-                            </div>
-                        
+                <div style='display: inline-block; margin: 10px;'>
+                    <h5>Thông tin sản phẩm {i}</h5>
+                    <div>
+                        <img src='{arr[0]}' alt='Product Image' style='max-width: 100px; height:100px;' /><br>
+                        {orderInfo.ProductName}<br>
+                        Giá: ${orderInfo.OrderDetail.Price}<br>
+                        Tổng tiền: ${orderInfo.OrderDetail.Price * orderInfo.OrderDetail.Quantity}<br>
+                        Số lượng: <input class='quantity-input' id='quantityInput' value='{orderInfo.OrderDetail.Quantity}' />
+            ";
+
+                    if (orderInfo.Order.Status == 1)
+                    {
+                        htmlResult += $@"
+                <button class='btn btn-danger btn-sm' onclick='confirmDelete({orderInfo.OrderDetail.OrderId},{orderInfo.OrderDetail.ProductId})'>Hủy</button>
+                    ";
+                    }
+
+                    htmlResult += $@"
                     </div>
-                ";
+                </div>
+            ";
+
                     i++;
                 }
-                
+
             }
 
             htmlResult += "</div>";
@@ -196,7 +228,7 @@ namespace ElectroMVC.Controllers
             <tr>
                 <th>Thông tin đơn hàng</th>
                 <td>
-                    Thời gian mua hàng: {orderInfo.CreatedDate} <br>
+                    Thời gian mua hàng: {orderInfo.CreatedDate.ToString("HH:mm dd/MM/yyyy")} <br>
                     Tổng tiền: ${orderInfo.TotalAmount} <br>
                 </td>
             </tr>
@@ -240,26 +272,34 @@ namespace ElectroMVC.Controllers
             var i = 1;
             foreach (var orderInfo in orderInfoList)
             {
-                if(orderInfo.Order.Status != 4)
+                if (orderInfo.Order.Status != 4)
                 {
                     string[] arr = orderInfo.Product.Image.Split(';');
                     htmlResult += $@"
-                    <div style='display: inline-block; margin: 10px;'>
-                        <h5>Thông tin sản phẩm {i}</h5>
-                          <div>
-                                <img src='{arr[0]}' alt='Product Image' style='max-width: 100px;' /><br>
-                                {orderInfo.ProductName}<br>
-                                Giá: ${orderInfo.OrderDetail.Price}<br>
-                                 Số lượng: <input min='0' type='number' class='quantity-input' id='quantityInput' value='{orderInfo.OrderDetail.Quantity}' /> 
-            <button class='btn btn-warning btn-sm update-btn' data-order-id='{orderInfo.OrderDetail.OrderId}' data-product-id='{orderInfo.OrderDetail.ProductId}' onclick='confirmUpdate(this)'>Cập nhật</button>
-            <button class='btn btn-danger btn-sm' onclick='confirmDelete({orderInfo.OrderDetail.OrderId},{orderInfo.OrderDetail.ProductId})'>Hủy</button>
-       
-                            </div>
-                        
+                <div style='display: inline-block; margin: 10px;'>
+                    <h5>Thông tin sản phẩm {i}</h5>
+                    <div>
+                        <img src='{arr[0]}' alt='Product Image' style='max-width: 100px;height:100px;' /><br>
+                        {orderInfo.ProductName}<br>
+                        Giá: ${orderInfo.OrderDetail.Price}<br>
+                        Tổng tiền: ${orderInfo.OrderDetail.Price * orderInfo.OrderDetail.Quantity}<br>
+                        Số lượng: <input class='quantity-input' id='quantityInput' value='{orderInfo.OrderDetail.Quantity}' />
+            ";
+
+                    if (orderInfo.Order.Status == 1)
+                    {
+                        htmlResult += $@"
+                <button class='btn btn-danger btn-sm' onclick='confirmDelete({orderInfo.OrderDetail.OrderId},{orderInfo.OrderDetail.ProductId})'>Hủy</button>
+                    ";
+                    }
+
+                    htmlResult += $@"
                     </div>
-                ";
+                </div>
+            ";
+
                     i++;
-                }    
+                }
             }
 
             htmlResult += "</div>";
@@ -348,8 +388,9 @@ namespace ElectroMVC.Controllers
         {
             try
             {
-                
+
                 var orders = _context.Order.OrderByDescending(o => o.CreatedDate).ToList();
+
 
                 // Chuyển đổi danh sách đơn hàng thành HTML
                 var orderTableHtml = "<table class='table' border='1' cellspacing='0'><tr><th>Mã đơn hàng</th><th>Ngày tạo</th><th>Khách hàng</th><th>Trạng thái</th></tr>";

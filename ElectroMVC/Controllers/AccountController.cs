@@ -333,7 +333,7 @@ namespace ElectroMVC.Controllers
 
                     // Regular user login successful
                     await _signInManager.RefreshSignInAsync(user);
-                    return RedirectToAction("Index1", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 
             }

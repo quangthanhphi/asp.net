@@ -1,7 +1,8 @@
 ﻿@*//Default.cshtml*@
-
 @model List<Product>
-
+@*@model X.PagedList.IPagedList<ElectroMVC.Models.Product>*@
+@using X.PagedList
+@using X.PagedList.Mvc.Core;
 @foreach (var item in Model)
 {
     string[] imageUrls = item.Image?.Split(';');
@@ -10,7 +11,7 @@
         <div class="product-item @item.ProductCategoryId">
             <div class="product discount product_filter">
                 <div class="product_image">
-                    <img src="@imageUrls[0]" alt="">
+                    <img style="height:221px;" src="@imageUrls[0]" alt="">
                 </div>
                 <div class="favorite favorite_left"></div>
                 <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$@(item.Price - item.PriceSale)</span></div>
@@ -21,14 +22,14 @@
             </div>
             <div class="red_button add_to_cart_button"><a href="#" class="btnAddToCart" data-id="@item.Id">add to cart</a></div>
         </div>
-        }
+    }
 
-     else
-      {
+    else
+    {
         <div class="product-item @item.ProductCategoryId">
             <div class="product product_filter">
                 <div class="product_image">
-                    <img src="@imageUrls[0]" alt="">
+                    <img style="height:221px;" src="@imageUrls[0]" alt="">
                 </div>
                 <div class="favorite"></div>
                 <div class="product_info">
@@ -40,3 +41,14 @@
         </div>
     }
 }
+
+@*<div class="row">
+    <div class="col-12">
+        @Html.PagedListPager(Model, page => Url.Action("InvokeAsync", new { page }),
+            new X.PagedList.Web.Common.PagedListRenderOptions
+            {
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" }
+            })
+    </div>
+</div>*@
